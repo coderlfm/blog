@@ -4,5 +4,6 @@ db.json
 *.log
 node_modules/
 public/
-.public.zip/
+/public.zip
+/public.rar
 .deploy*/

@@ -12,11 +12,11 @@ cover: /cover-imgs/webpack.jpg
 
 ---
 
-babel 本身是一个独立的插件，但是它可以很多其他工具配合使用
+`babel` 本身是一个独立的插件，但是它可以很多其他工具配合使用
 
 <!-- more -->
-webpack 现在已经是前端开发中必不可少的工具了，很多脚手架都是基于 webpack 来进行开发的，在开发中我们必不可少的会使用一些 es2015+ 新特性，或者使用 react 或者 typescript 来开发我们的项目，浏览器是不能直接识别我们的代码的
-此时，我们就可以在 webpack 中配合 babel 来帮我们做一些转换
+`webpack` 现在已经是前端开发中必不可少的工具了，很多脚手架都是基于 `webpack` 来进行开发的，在开发中我们必不可少的会使用一些 `es2015+` 新特性，或者使用 `react` 或者 `typescript` 来开发我们的项目，浏览器是不能直接识别我们的代码的
+此时，我们就可以在 `webpack` 中配合 `babel` 来帮我们做一些转换
 
 ## babel-loader 的基本使用
 ``` shell shell
@@ -24,8 +24,8 @@ npm install --save-dev babel-loader
 ```
 
 ## 修改 webpack.config.js 配置
-在 webpack 中 使用 babel 比较简单，只需要在我们匹配到我们写的 js 或者 ts 等文件时，交给 babel来处理就ok，
-关于 babel 的具体配置写在 babel.config.js，用法和单独使用 babel 时一致  
+在 `webpack` 中 使用 `babel` 比较简单，只需要在我们匹配到我们写的 js 或者 ts 等文件时，交给 `babel` 来处理就ok，
+关于 `babel` 的具体配置写在 `babel.config.js`，用法和单独使用 `babel` 时一致  
 
 ``` js webpack.config.js
 const path = require('path');
