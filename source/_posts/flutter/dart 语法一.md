@@ -367,6 +367,38 @@ dart 中也存在作用域，即 {} 内定义的变量只能在 {} 内访问，
   var result = fn9('dart');
   result();     //name: dart
 ```
+<br/>
+
+## 5. 运算符
+dart 中运算符基本上其它语言有的都有，但是有一些运算符是需要稍微注意的，具体的运算符请 [查看](https://dart.cn/guides/language/language-tour#operators)
+ 以下为几个需要注意的运算符
+<br/>
+
+### 5.1 级联运算符
+ `..` 可以在同一个对象上连续调用多个变量，或者方法
+
+``` dart main.dart
+  Map<String, dynamic> fn1() {
+    return {"name": null, "age": null};
+  }
+
+  fn1()
+    ..['name'] = 'dart'
+    ..['age'] = 18;
+```
+<br/>
+
+### 5.2 `??=` 赋值运算符
+`??=` 运算符会在当值为 `null` 时给它赋值
+``` dart 
+  var age = 19;
+  age ??= 20;
+  print(age); //19
+
+  var name = null;
+  name ??= 'dart';
+  print(name); //dart
+```
 
 
 
