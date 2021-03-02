@@ -1,8 +1,9 @@
 {
-  "name": "hexo-site",
-  "version": "0.0.0",
+  "name": "blog",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
+    "g": "hexo g",
     "start": "hexo g && hexo s",
     "draft": "hexo g && hexo s --draft",
     "build": "hexo generate",
@@ -14,6 +15,8 @@
     "version": "5.4.0"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.13.5",
+    "babel-plugin-inferno": "^6.1.1",
     "bulma-stylus": "0.8.0",
     "hexo": "^5.0.0",
     "hexo-browsersync": "^0.3.0",

@@ -1,5 +1,5 @@
 ---
-title: Webpack derServer
+title: Webpack devServer
 date: 2021-02-23 16:05:54
 toc: true
 tags:
@@ -11,7 +11,7 @@ categories:
 cover: /cover-imgs/webpack.jpg
 
 ---
-derServer 可以帮助我们在本地起一个服务器来更便捷的帮助我们开发
+devServer 可以帮助我们在本地起一个服务器来更便捷的帮助我们开发
 
 <!-- more -->
 前言
@@ -287,3 +287,145 @@ export default function App() {
 既可看到以下内容
 {% asset_img hello_react17.png %}
 
+
+## devServer 的其它配置
+
++ `open` : 可设置布尔值，项目启动后打开浏览器，vue脚手架默认关闭，react脚手架默认开启
++ `host` : 配置需要使用的 host，如果需要配置成外部可以访问，可配置成 `'0.0.0.0'`
++ `compress` : 是否为静态文件开启 `gzip` 压缩，仅在开发阶段生效，部署阶段需要 `nginx` 配置才生效
++ `watchContentBase` : 文件发生更改后是否重新加载整个页面
++ `contentBase` : 配置静态资源提供的来源
++ `useLocalIp` : 为配置是否可以通过本地 ip 来访问，react 和 vue 的脚手架默认配置为开启
+
+``` js webpack.config.js
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const VueLoaderPlugin = require("vue-loader/lib/plugin");
+const ReactRefreshPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+
+module.exports = {
+  entry: "./src/main.js",
+  output: {
+    filename: "bundle.js",
+    path: path.resolve("./build"),
+
+    // 当我们项目部署在非根目录时， 可以配置成 / 目录名 /  或者  ./
+    // 表示从当前目录加载文件
+    // publicPath: '/lfm/'
+  },
+  mode: "development",
+
+  // 开发服务配置
+  devServer: {
+    // 热更新
+    hot: true,
+
+    hotOnly: true,
+
+    // 配置路径
+    // publicPath: '/lfm/',
+
+    // 启动后默认打开浏览器
+    open: true,
+
+    // 默认是 localhost ，配置成 0.0.0.0 可以让外部服务器可以访问
+    host: "0.0.0.0",
+
+    // 该配置使我们的项目可以使用本地ip打开，
+    useLocalIp: true,
+
+    // 开发监听端口
+    port: 3000,
+
+    // 配置是否打开 gzip 压缩
+    compress: true,
+
+    // 文件更改后是否重新加载整个页面
+    watchContentBase: true,
+
+    // 告诉服务器从哪里提供内容。只有在你想要提供静态文件时才需要。devServer.publicPath 将用于确定应该从哪里提供 bundle，并且此选项优先。
+    // contentBase: path.resolve(__dirname, 'lfm')
+  },
+  module: {
+    rules: [
+      {
+        test: /\.vue$/i,
+        use: "vue-loader",
+      },
+      {
+        test: /\.jsx?$/i,
+        use: "babel-loader",
+      },
+    ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
+    }),
+    new VueLoaderPlugin(),
+    new ReactRefreshPlugin(),
+  ],
+};
+
+```
+
+## devServer 配置代理
+
+后续当请求 `/lfm/` 时会被代理到 `http://localhost:8888` 
+ 
+``` js webpack.config.js
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const VueLoaderPlugin = require("vue-loader/lib/plugin");
+const ReactRefreshPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+
+module.exports = {
+  entry: "./src/main.js",
+  output: {
+    filename: "bundle.js",
+    path: path.resolve("./build"),
+  },
+
+  mode: "development",
+
+  // 开发服务配置
+  devServer: {
+    // 热更新
+    hot: true,
+
+    // 配置代理 
+    proxy: {
+      "/lfm": {
+        target: "http://localhost:8888",
+        pathRewrite: {
+          "^/lfm": ""
+        },
+        secure: false,
+        changeOrigin: true
+      }
+    },
+  },
+
+  module: {
+    rules: [
+      {
+        test: /\.vue$/i,
+        use: "vue-loader",
+      },
+      {
+        test: /\.jsx?$/i,
+        use: "babel-loader",
+      },
+    ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
+    }),
+    new VueLoaderPlugin(),
+    new ReactRefreshPlugin(),
+
+  ],
+};
+
+```

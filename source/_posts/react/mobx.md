@@ -3,6 +3,10 @@ title: mobx
 date: 2020-11-23 10:31:10
 toc: true
 tags:
+- javaScript
+- React
+categories:
+- javaScript
 
 cover: /cover-imgs/mobx.png
 

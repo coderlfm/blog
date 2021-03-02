@@ -2,7 +2,10 @@
 title: gulp
 date: 2021-01-08 11:13:54
 tags:
+- javaScript
 
+categories:
+- javaScript
 
 cover: /cover-imgs/gulp.png
 
