@@ -11,9 +11,9 @@ categories:
 cover: /cover-imgs/webpack.jpg
 ---
 
-webpack 中 cdn 的使用
+## webpack 中 cdn 的使用
 
-<!-- more  -->
+<!-- more -->
 
 ## cdn 的使用
 如果我们项目在打包后，生成的文件会很大的话，我们可以通过 CDN 的方式来优化我们打包压缩后的代码，
