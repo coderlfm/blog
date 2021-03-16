@@ -28,7 +28,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 // 当配置文件为导出一个函数时，动态传入不同的模式需要在 package.json中 使用 --env 来设置
 module.exports = {
-  mode,
+  mode: "production",
   entry: {
     index: "./src/index.js",
   },
@@ -156,7 +156,7 @@ const { ProvidePlugin } = require("webpack");
 
 // 当配置文件为导出一个函数时，动态传入不同的模式需要在 package.json中 使用 --env 来设置
 module.exports = {
-  mode,
+  mode: "production",
   entry: {
     index: "./src/index.js",
   },
