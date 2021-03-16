@@ -80,16 +80,6 @@ module.exports = {
 ```
 
 
-我们在项目根目录下新建一个 babel 的配置文件，并且配置一些 `presets`, `presets` 可以配置一些预设，预设是一些插件的集合，类似于我们去肯德基吃东西时买的套餐，里面包含了一些其它食物。
-
-在使用 babel 的时候我们还需要安装其它的一些必须插件 
-
-`babel-loader` 主要是提供一个过程管理 -> 调用 babel-core
-`@babel/bable-core` babel 的核心，把源码转换成` 抽象语法树`，再进行遍历生成
-`@babel/preset-env` 把 es6 语法树转换成 es5 语法树
-
-最终再把 es5 语法树转换成 es5 的代码 -> 调用 babel-core 进行转换
-
 ``` js babel.config.js
 module.exports = {
   presets: [
@@ -138,7 +128,18 @@ module.exports = {
                 exclude:/node_modules/,
                 use:[
                     'babel-loader',
-                    'eslint-loader' //使用 eslint-loader
+                    //使用 eslint-loader
+                    {
+                      loader: 'eslint-loader',
+                      // 最新执行
+                      enforce: 'pre',
+                      // 参数配置 fix：自动修复
+                      options: {
+                        fix: true,
+                      },
+                      // 排除 node_modules
+                      exclude: /node_modules/
+                    }
                 ]
             },
             {
