@@ -208,7 +208,8 @@ module.exports = {
 <br/>
 
 ## `file-loader` 的使用
-当我们在代码中使用了一些图片等静态资源，就需要使用 `file-loader` 来帮我们处理了
+当我们在代码中使用了一些图片等静态资源，就需要使用 `file-loader` 来帮我们处理了，
+
 
 ```js webpack.config.js
 const path = require('path');
@@ -247,9 +248,48 @@ module.exports = {
     }
 }
 ```
+<br/>
+
+如果我们在js代码中 使用过 import 或者 require 的方式引入静态图片资源，file-laoder 默认的配置需要我们 再通过 .default 来获取图片，因为它默认帮我们转换成 es6 模块化了
+
+如：
+``` js index.js
+import logo from './assets/images/logo.png';
+
+...
+<img src={log.default}>
+...
+
+```
+<br/>
+
+如果不想使用这种方式，我们还需要对 file-loader 进行一些额外的配置, `esModule: false`
+
+``` js webpack.config.js
+...
+ {
+    test: /\.(png|svg|jpg)$/,
+    use: [
+        {
+            loader: 'file-loader', 
+            options: {
+                name: 'img/[name].[hash:6].[ext]',
+                esModule: false
+            }
+        }
+    ]
+}
+...
+
+```
+
+<br/>
+<br/>
+
 
 options 中的配置项目 可从 [webpack官网](https://www.webpackjs.com/loaders/file-loader/#%E9%80%89%E9%A1%B9) 中查询到
 上述配置表示在 打包后把图片放到img文件下，保留原文件名并拼接上6位的hash值，最后保留原有文件的扩展名
+
 
 
 ## `url-loader` 的使用

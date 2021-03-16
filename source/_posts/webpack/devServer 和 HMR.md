@@ -294,7 +294,7 @@ export default function App() {
 + `host` : 配置需要使用的 host，如果需要配置成外部可以访问，可配置成 `'0.0.0.0'`
 + `compress` : 是否为静态文件开启 `gzip` 压缩，仅在开发阶段生效，部署阶段需要 `nginx` 配置才生效
 + `watchContentBase` : 文件发生更改后是否重新加载整个页面
-+ `contentBase` : 配置静态资源提供的来源
++ `contentBase` : 配置静态资源提供的来源，并且会先读取 `output` 中的 path ，再读取 `devServe` 中的 contentPath
 + `useLocalIp` : 为配置是否可以通过本地 ip 来访问，react 和 vue 的脚手架默认配置为开启
 
 ``` js webpack.config.js
@@ -331,6 +331,9 @@ module.exports = {
     // 默认是 localhost ，配置成 0.0.0.0 可以让外部服务器可以访问
     host: "0.0.0.0",
 
+    // 表示开发时在硬盘同时写入一份，某些情况下方便我们调试
+    writeToDisk: true,
+    
     // 该配置使我们的项目可以使用本地ip打开，
     useLocalIp: true,
 

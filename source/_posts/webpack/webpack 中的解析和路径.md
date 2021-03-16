@@ -111,7 +111,7 @@ module.exports = {
 这个时候我们就可以通过配置 `webpack` 来做一些修改
 
 
-`webpack.config.js` 中 `output` 中可以配置 `publicPath` ，该 `publicPath` 会在我们项目打包后引入静态资源的时候作为前缀来加入，
+`webpack.config.js` 中 `output` 中可以配置 `publicPath` ，该 `publicPath` 会在我们项目打包后引入静态资源的时候作为前缀来加入，如果是生产环境，`publicPath` 也可能会指向 `cdn`，比如七牛
 
 例如我们已有一个项目为 `www.baidu.com`, 我们想在已有的项目下再部署一个项目，类似于 `www.baidu.com/temp/` 的目录，这种情况，我们的项目默认是请求不到资源的，因为我们请求的地址会类似如下
 
@@ -138,7 +138,8 @@ module.exports = {
     filename: "bundle.js",
     path: path.resolve("./build"),
 
-    // 配置 publicPath
+    // 当我们项目部署在非根目录时， 可以配置成 / 目录名 /  或者  ./
+    // 表示从当前目录加载文件
     publicPath: '/temp/'
   },
   mode: "development",
