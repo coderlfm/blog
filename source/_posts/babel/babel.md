@@ -17,6 +17,7 @@ cover: /cover-imgs/babel1.png
 `babel` 自身也是一个独立的工具 和 `post-css` 一样 ，它是可以单独使用的
 <br/>
 
+
 ## `babel` 的基本使用
 1. 安装 `babel` 所需的包
 ``` shell shell
@@ -58,7 +59,7 @@ npm install --save--dev @babel/plugin-transform-arrow-functions
 npx babel src --out-dir lib --plugins=@babel/plugin-transform-arrow-functions 
 ```
 
-以上就是babel 中在命令行中插件的使用，当我们需要使用其它插件的时候方式也是类似
+以上就是babel 中在命令行中插件的使用，当我们需要使用其它插件的时候方式也是类似，比如配置项目支持装饰器等
 <br/>
 
 ## `babel` 命令行中 `preset` (预设) 的使用
@@ -129,6 +130,19 @@ npx babel --config-file ./babel.config.js -d lib ./src
 当我们不需要适配低版本浏览器或者指定需要适配某个版本的浏览器时，可以通过 `targets` 来指定我们需要适配的目标版本  
 
 要查看 `@babel/preset-env` 更多配置选项，请 [查看](https://www.babeljs.cn/docs/babel-preset-env#options)
+
+
+
+我们在项目根目录下新建一个 babel 的配置文件，并且配置一些 `presets`, `presets` 可以配置一些预设，预设是一些插件的集合，类似于我们去肯德基吃东西时买的套餐，里面包含了一些其它食物。
+
+在使用 babel 的时候我们还需要安装其它的一些必须插件 
+
+`babel-loader` 主要是提供一个过程管理 -> 调用 babel-core
+`@babel/bable-core` babel 的核心，把源码转换成` 抽象语法树`，再进行遍历生成
+`@babel/preset-env` 把 es6 语法树转换成 es5 语法树
+
+最终再把 es5 语法树转换成 es5 的代码 -> 调用 babel-core 进行转换
+
 
 
 
@@ -217,6 +231,17 @@ module.exports = {
     </div>
  </article>
 
+
+ <article class="message is-warning"> 
+  <div class="message-body">
+  除此之外，我们也可以通过在 html 中添加 以下代码来实现添加 <code>polyfill</code>，该服务器会根据浏览器请求的请求头来动态分发不同的 <code>polyfil</code>，如果觉得这种方式可能存在一些隐患的话，也可以自己搭建一个私服，网上也有一些相关的教程
+
+  <code>
+    <script src="https://polyfill.io/v3/polyfill.min.js"> </script>
+  </code>
+
+  </div>
+</article>
 
 <br/>
 

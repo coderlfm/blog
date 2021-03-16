@@ -293,7 +293,10 @@ options 中的配置项目 可从 [webpack官网](https://www.webpackjs.com/load
 
 
 ## `url-loader` 的使用
-`url-loader` 的功能和 `file-loader` 类似，但是可以设置指定大小内的图片转换为base64格式的图片，加载网页时一并加载出来
+`url-loader` 的功能和 `file-loader` 类似，
+相当于对 `file-loader` 进行增强，并且可以通过 `limit` 属性来配置限制，
+大于这个限制的 图片会被交给 `file-loader` 处理，小于这个限制的会被转换成 base64 的格式，直接打包进源代码
+但是可以设置指定大小内的图片转换为base64格式的图片，加载网页时一并加载出来
 
 ```js webpack.config.js
 const path = require('path');
@@ -333,6 +336,9 @@ module.exports = {
 }
 ```
 <br/>
+
+## html-loader
+可以解决在 html 文件中使用 img 标签使用的 url 问题
 
 
 ## `webpack 5` 中 `asset` 的使用
