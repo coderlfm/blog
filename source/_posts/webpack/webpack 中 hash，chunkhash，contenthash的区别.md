@@ -174,3 +174,10 @@ yarn build
 {% asset_img build-contenthash-3.png %}
 
 `contenthash`  的粒度是文件级别的，只有修改的文件才会重新生成 哈希值，有利于缓存，[这里](https://webpack.docschina.org/blog/2020-10-10-webpack-5-release/#real-content-hash) 有关于 `contenthash` 的更多说明
+<br/>
+
+## 最佳实践
+
++ `hash` 单入口项目
++ `chunkhash` 多入口项目 
++ `contenthash` 需要长期缓存，并且确定变化较小的
