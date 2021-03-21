@@ -137,6 +137,7 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve("./build"),
+    chunkFilename: '[name].[hash:6].chunk.js'
 
     // 当我们项目部署在非根目录时， 可以配置成 / 目录名 /  或者  ./
     // 表示从当前目录加载文件
@@ -184,7 +185,20 @@ module.exports = {
 ``` html index.html 
 <script defer src="/temp/bundle.js"></script>
 ```
+<br/>
 
+## filename 和 chunkFilename 的区别
++ `filename` 入口文件的名称
++  `chunkFilename` chunk 文件的名称
+  - 通过 `splitChunks` 分割
+  - `import()` 导入
+
+
+<!-- <article class="message is-warning">
+  <div class="message-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+  </div>
+</article> -->
 
 
 

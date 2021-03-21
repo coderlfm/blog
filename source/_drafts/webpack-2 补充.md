@@ -111,7 +111,7 @@ path 模块的 path.basename('./src/main.js ','.js') // 不获取 .js 后缀
 
 ## 多入口文件 同时多html 文件
  
- {% 静态图片
+ <!-- { 静态图片 -->
 使用时 ` ...htmlwebpackplugins`
 
 chunkHash 只会读模块id 引入 page1.js + page2.js 

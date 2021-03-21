@@ -36,7 +36,7 @@ import() 异步加载代码原理是 使用 jsonp ，
 
 + `commitizen` 是格式化 commit message 的工具
 + `validate-commit-msg` 检查项目 commit message 是否符合格式
-+ conventional-changelog-cli 可以从 git metadata 生成变更日志
++ conventional-changelog-cli 可以从 git metadata 生成变更日志，推荐的标准是 angular 项目
 
 2. 初始化配置
 或者查看 `commitizen` 文档，也可以使用 --yarn

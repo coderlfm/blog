@@ -71,7 +71,7 @@ import(
 
 `webpackPrefeatch` 和 `webpackPrelaod` 不太一样， `webpackPrefeatch` 会在浏览器空闲的时候进行下载
 
-``` src/index.js
+``` js src/index.js
 const button = document.createElement('button');
 button.innerText = '加载bar';
 
