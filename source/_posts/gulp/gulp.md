@@ -16,7 +16,6 @@ gulp 的核心是 `流(stream)` 和 `任务(task)`
 <!-- more -->
 
 
-
 ## 创建 `gulpfile.js`
 
 首先先在 项目根目录下创建 `gulpfile.js` 配置文件

@@ -44,7 +44,7 @@ babel-eslint 来解析
 有时候配置 loader 报错时，把 use 换成 loader
 项目根据 新建 .vscode 然后配置项目自动修复
 
-## 
+## mode env NODE_ENV
 mode 不传时 `production`
 --mode='development' 设置 mode
 --env='development' 只会影响函数的形参(env)
