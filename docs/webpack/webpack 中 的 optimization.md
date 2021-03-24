@@ -232,12 +232,6 @@ optimization: {
       // 强制执行拆分的大小阈值
       enforceSizeThreshold: 50000,
 
-      // 缓存组中可以单独配置以上的所有配置，
-      // 除此之外新增了 test 、 priority 和 reuseExistingChunk 三个属性
-      // test 填写 模块路径或者 chunk 名称来做匹配到的资源
-      // priority 配置该缓存组的优先级，默认值为0，该值优先级为负数，所以我们通常设置为负数，
-      // 当匹配到的资源属于多个缓存组的时候，就会根据 优先级来选择最终的匹配自定义缓存组
-      // reuseExistingChunk 如果当前 chunk 包含 其它从主 chunk 中拆分出来的模块，则它们会被复用
       cacheGroups: {
         defaultVendors: {
           test: /[\\/]node_modules[\\/]/,
@@ -253,6 +247,12 @@ optimization: {
     },
   }
 ```
+
+> 缓存组中可以单独配置以上的所有配置 除此之外新增了 test 、 priority 和 reuseExistingChunk 三个属性
+> test 填写 模块路径或者 chunk 名称来做匹配到的资源
+> priority 配置该缓存组的优先级，默认值为0，该值优先级为负数，所以我们通常设置为负数，
+> 当匹配到的资源属于多个缓存组的时候，就会根据 优先级来选择最终的匹配自定义缓存组 reuseExistingChunk 如果当前 chunk 包含 其它从主 chunk 中拆分出来的模块，则它们会被复用
+
 <br/>
 
 

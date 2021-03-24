@@ -2,7 +2,6 @@
 title: Webpack 集成 babel 的使用
 date: 2021-02-05 10:58:54
 toc: true
-sidebar: auto
 tags:
 - Webpack
 
@@ -192,7 +191,8 @@ npx eslint --init
     + 检查语法、提示错误，并且强制按照代码风格
  
  这里我们先选择 检查语法并且提示错误 
- {% asset_img eslint1.png %}
+ <!-- {% asset_img eslint1.png %} -->
+ ![](./babel/eslint1.png )
  <br/>
  
  <br/>

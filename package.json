@@ -6,10 +6,11 @@
   "author": "宿愿Cc <375642570@qq.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "dev": "vitepress dev docs",
+    "serve": "vitepress serve docs",
+    "build": "vitepress  build docs"
   },
-  "devDependencies": {
-    "vuepress": "^1.8.2"
+  "dependencies": {
+    "vitepress": "^0.12.2"
   }
 }
