@@ -9,7 +9,7 @@ categories:
  - Webpack
 
 
-cover: /cover-imgs/webpack.jpg
+cover: http://qiniu-oss.liufengmao.cn/blog/cover-imgs/webpack.jpg
 
 ---
 webpack 中 `webpackPreload` 和 `webpackPrefetch` 可以让我们对一些模块进行预加载及预获取

@@ -9,7 +9,7 @@ categories:
  - Webpack
 
 
-cover: /cover-imgs/webpack.jpg
+cover: http://qiniu-oss.liufengmao.cn/blog/cover-imgs/webpack.jpg
 
 ---
 webpack 作为一个模块化打包工具，但是我们一些 `loader` 和 `plugin` 也可以打包 vue 文件

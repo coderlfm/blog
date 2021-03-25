@@ -7,7 +7,7 @@ tags:
 categories: 
 - [Node ]
 
-cover: /cover-imgs/commonjs-2.png
+cover: http://qiniu-oss.liufengmao.cn/blog/cover-imgs/commonjs-2.png
 
 ---
 

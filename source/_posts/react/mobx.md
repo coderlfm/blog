@@ -8,7 +8,7 @@ tags:
 categories:
 - javaScript
 
-cover: /cover-imgs/mobx.png
+cover: http://qiniu-oss.liufengmao.cn/blog/cover-imgs/mobx.png
 
 ---
 近期mobx更新了6.0版本，该版本可以说是一次大更新，对比之前的mobx4/5改变很大

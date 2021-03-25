@@ -8,7 +8,7 @@ tags:
 categories:
   - javaScript
 
-cover: /cover-imgs/gulp.png
+cover: http://qiniu-oss.liufengmao.cn/blog/cover-imgs/gulp.png
 ---
 
 gulp 的核心是 `流(stream)` 和 `任务(task)`

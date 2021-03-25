@@ -2,11 +2,11 @@
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
-logo: /layout_img/avatar.gif
+logo: http://qiniu-oss.liufengmao.cn/blog/layout_img/avatar.gif
 
 head:
     # URL or path to the website's icon
-    favicon: /layout_img/avatar.gif
+    favicon: http://qiniu-oss.liufengmao.cn/blog/layout_img/avatar.gif
 
 # Site
 title: Blog 

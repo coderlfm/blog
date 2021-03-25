@@ -8,7 +8,7 @@ tags:
 categories:
 - javaScript
 
-cover: /cover-imgs/redux-toolkit.png
+cover: http://qiniu-oss.liufengmao.cn/blog/cover-imgs/redux-toolkit.png
 ---
 
 

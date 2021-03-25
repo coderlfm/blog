@@ -7,7 +7,7 @@ tags:
 categories:
 - http
 
-cover: /cover-imgs/vite.png
+cover: http://qiniu-oss.liufengmao.cn/blog/cover-imgs/vite.png
 
 
 ---

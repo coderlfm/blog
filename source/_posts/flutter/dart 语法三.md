@@ -10,7 +10,7 @@ categories:
 - Flutter
 - Dart
 
-cover: /cover-imgs/dart2.png
+cover: http://qiniu-oss.liufengmao.cn/blog/cover-imgs/dart2.png
 ---
 
 dart语法三
