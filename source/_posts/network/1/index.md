@@ -1,3 +1,21 @@
+---
+title: 计算机网络 基本
+date: 2021-03-21 14:10:54
+tags:
+- http
+
+categories:
+- http
+
+cover: /cover-imgs/web-1.jpg
+
+
+---
+
+计算机网络的基本概念
+
+<!-- more -->
+
 ## 网络
 
 电信网络
@@ -228,8 +246,13 @@ tcp/ip
 + 网络层
 + 数据链路层
 + 物理层 
-  
-  
+
+TCP/IP 协议分层
+应用层：  HTTP FTP SMTP DNS POP3 等
+传输层：  `TCP` UDP
+网络层：  ARP `IP` ICMP IGMP
+数据链路层：CSMA/CD PPP X.25  HDLC  帧中继   
+(网络接口层)  
   
   
   

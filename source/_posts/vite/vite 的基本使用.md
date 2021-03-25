@@ -1,3 +1,21 @@
+---
+title: vite 的基本使用
+date: 2021-03-25 14:10:54
+tags:
+- http
+
+categories:
+- http
+
+cover: /cover-imgs/vite.png
+
+
+---
+
+vite 的基本使用
+
+<!-- more -->
+
 ## vite 的基本使用
 
 为什么 vite更快，vite 使用的是 esbuild 打包，该打包工具采用 go 语言编写
