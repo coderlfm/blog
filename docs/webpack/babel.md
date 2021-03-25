@@ -12,6 +12,7 @@ cover: /cover-imgs/webpack.jpg
 
 ---
 
+ # webpack 中 配置 babel 中的使用
 `babel` 本身是一个独立的插件，但是它可以很多其他工具配合使用
 
 <!-- more -->
@@ -199,42 +200,48 @@ npx eslint --init
  选择哪个模块规范？
 
   这里因为默认是支持 es6 module，所以我们选择 CommonJS 
- {% asset_img eslint2.png %}
+ <!-- {% asset_img eslint2.png %} -->
  <br/>
  
  <br/>
  选择使用哪个框架？
 
  这里测试我们选择 React
- {% asset_img eslint3.png %}
+ 
+ <!-- {% asset_img eslint3.png %} -->
+ ![](./babel/eslint3.png)
  <br/>
  
  <br/>
  是否使用 Typescript ？
-
  因为我们是简单测试，所以不用 Typescript
- {% asset_img eslint4.png %}
+ <!-- {% asset_img eslint4.png %} -->
+ ![](./babel/eslint4.png)
  <br/>
  
  <br/>
  询问我们代码运行在什么环境？
 
  我们选择 Browser 
- {% asset_img eslint5.png %}
+ <!-- {% asset_img eslint5.png %} -->
+ ![](./babel/eslint5.png)
  <br/>
 
  <br/>
  询问我们配置文件需要已什么格式来保存
 
  我们选择 JavaScript
- {% asset_img eslint6.png %}
+ <!-- {% asset_img eslint6.png %} -->
+
+ ![](./babel/eslint6.png)
  <br/>
  
  <br/>
  是否现在就执行 npm 来进行安装
 
  因为我们选择的配置里面需要支持 React，所以 eslint 需要我们安装对 React 支持的插件
- {% asset_img eslint7.png %}
+ <!-- {% asset_img eslint7.png %} -->
+ ![](./babel/eslint7.png)
  <br/>
  
  <br/>
@@ -289,7 +296,8 @@ ReactDom.render(<App />, document.getElementById("root"));
  
  + `setMsg 已赋值但从来没有使用`
  
- {% asset_img eslint-error1.png %}
+ <!-- {% asset_img eslint-error1.png %} -->
+ ![](./babel/eslint-error1.png)
  
 我们可以在代码中先把 `setMsg` 删除，这个错误立马就会消除
  
@@ -341,7 +349,8 @@ module.exports = {
  
  <br/>
  重新执行编译就会发现错误变成了警告
- {% asset_img eslint-error3.png %}
+ <!-- {% asset_img eslint-error3.png %} -->
+ ![](./babel/eslint-error3.png)
 
 
  那到这里后我们的 eslint 就可以正常使用了吗，其实不然，因为有很多配置规则我们都还没有来根据项目进行配置，比如我们要求每一行代码后面都需要加上分号
@@ -364,7 +373,9 @@ npx eslint --init
 + 检查语法、提示错误，并且强制按照代码风格
  
  这里我们选择 `最后一项`
- {% asset_img eslint1-1.png %}
+
+ <!-- {% asset_img eslint1-1.png %} -->
+ ![](./babel/eslint1-1.png)
  <br/>
  <br/>
  <code>......  中间步骤和上续一致</code>
@@ -378,14 +389,17 @@ npx eslint --init
  
  我们选择 `第一个`
 
- {% asset_img eslint1-6.png %}
+ <!-- {% asset_img eslint1-6.png %} -->
+ ![](./babel/eslint1-6.png)
  <br/>
 
  <br/>
  选择哪个主流的代码风格
 
  我们选择 `Airbnb`
- {% asset_img eslint1-7.png %}
+
+ <!-- {% asset_img eslint1-7.png %} -->
+ ![](./babel/eslint1-7.png)
  <br/>
  <br/>
  <code>......  剩下步骤和上续一致</code>
@@ -447,12 +461,15 @@ ReactDom.render(<App />, document.getElementById("root"));
  + `setMsg 已赋值但从来没有使用`
  + `在扩展名为'.js'的文件中不允许使用JSX`
 
- {% asset_img eslint1-11.png %}
+ <!-- {% asset_img eslint1-11.png %} -->
+ ![](./babel/eslint1-11.png)
  
  那我们根据以上报的错误修改一下我们的代码后重新运行
  
  1. `.eslintrc.js` 修改未使用的值不报错误而报警告
- {% asset_img eslint1-12.png %}
+
+ <!-- {% asset_img eslint1-12.png %} -->
+ ![](./babel/eslint1-12.png)
 <br/>
 <br/>
 
@@ -471,7 +488,8 @@ ReactDom.render(<App />, document.getElementById('root'));
 <br/>
  3. 重新执行打包命令
     就会发现可以正常编译了
-    {% asset_img eslint1-13.png %}
+    <!-- {% asset_img eslint1-13.png %} -->
+    ![](./babel/eslint1-13)
 
 ## vscode 插件
 我们会发现每次都要重新来执行打包命令来让 eslint 帮助我们做代码检查这个过程太低效了
@@ -479,4 +497,5 @@ ReactDom.render(<App />, document.getElementById('root'));
 
  1. 首先先在 vscode 中安装 eslint 插件
  2. 然后打开我们的代码文件，会发现 eslint 在我们编写的时候就能提示错误了
- {% asset_img eslint2-1.png %}
+ <!-- {% asset_img eslint2-1.png %} -->
+ ![](./babel/eslint2-1.png)
