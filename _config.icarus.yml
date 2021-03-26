@@ -3,7 +3,10 @@ version: 4.0.0
 # Icarus theme variant, can be "default" or "cyberpunk"
 variant: default
 # Path or URL to the website's logo
-logo: https://qiniu-oss.liufengmao.cn/blog/layout_img/avatar.png
+logo: 
+    light: https://qiniu-oss.liufengmao.cn/blog/layout_img/avatar.png
+    dark: https://qiniu-oss.liufengmao.cn/blog/layout_img/avatar.png
+
 # Page metadata configurations
 head:
     # URL or path to the website's icon
