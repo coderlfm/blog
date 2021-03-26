@@ -24,13 +24,12 @@ logo:
 ```
 
 屏幕在tablet大小的时候，navbar-menu会变白色，作以下修改即可
+在 `node_modules/hexo-theme-icarus/include/style/navbar.styl` 中的第 53行插入以下代码 
 ```
-.navbar，
-+ .navbar-menu，
- .card 
-        background-color：rgba（40,44,52,0 .5）background 
-        -filter：none 
-        -webkit-backdrop-filter：none
+.navbar-menu, .card
+    background-color: rgba(40,44,52,0.5)
+    backdrop-filter: none
+    -webkit-backdrop-filter: none
 
 ```
 3. 重新打包生成静态文件
