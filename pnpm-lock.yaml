@@ -2773,7 +2773,7 @@ packages:
       inferno-create-element: 7.4.8
       js-yaml: 3.14.1
       moment: 2.29.1
-      semver: 7.3.4
+      semver: 7.3.5
     dev: false
     peerDependencies:
       hexo: ^5.0.0
@@ -2921,7 +2921,7 @@ packages:
       inferno: 7.4.8
       inferno-create-element: 7.4.8
       moment: 2.29.1
-      semver: 7.3.4
+      semver: 7.3.5
     dev: false
     engines:
       node: '>=10.13.0'
@@ -3837,7 +3837,7 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-+GB6zVA9LWh6zovYQLALHwv5rb2PHGlJi3lfiqIHxR0uuwCgefcOJc59v9fv1w8GbStwxuuqqAjI9NMAOOgq1A==
-  /semver/7.3.4:
+  /semver/7.3.5:
     dependencies:
       lru-cache: 6.0.0
     dev: false
@@ -3845,7 +3845,7 @@ packages:
       node: '>=10'
     hasBin: true
     resolution:
-      integrity: sha512-tCfb2WLjqFAtXn4KEdxIhalnRtoKFN7nAwj0B3ZXCbQloV2tq5eDbcTmT68JJD3nRJq24/XgxtQKFIpQdtvmVw==
+      integrity: sha512-PoeGJYh8HK4BTO/a9Tf6ZG3veo/A7ZVsYrSA6J8ny9nb3B1VrpkuN+z9OE5wfE5p6H4LchYZsegiQgbJD94ZFQ==
   /send/0.16.2:
     dependencies:
       debug: 2.6.9
@@ -4463,4 +4463,4 @@ specifiers:
   hexo-renderer-marked: ^3.0.0
   hexo-renderer-stylus: ^2.0.0
   hexo-server: ^2.0.0
-  hexo-theme-icarus: ^4.1.0
+  hexo-theme-icarus: ^4.1.2
