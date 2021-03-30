@@ -107,6 +107,7 @@ navbar:
         分类: /categories
         标签: /tags
         关于: /about
+        笔记: /notes
     # Links to be shown on the right of the navigation bar
     links:
         Download on GitHub:

@@ -117,3 +117,26 @@ valine:
   enable: true
   appid: 5VpWOrk8v8I1QpmTbBLvaxxD-gzGzoHsz
   appkey: a5E2tF6kq0a7CY6xHb9OggxA
+
+marked:
+  gfm: true
+  pedantic: false
+  breaks: true
+  smartLists: true
+  smartypants: true
+  quotes: '“”‘’'
+  modifyAnchors: 0
+  anchorAlias: false
+  autolink: true
+  mangle: true
+  sanitizeUrl: false
+  headerIds: true
+  lazyload: false
+  prependRoot: false
+  postAsset: false
+  external_link:
+    enable: false
+    exclude: []
+    nofollow: false
+  disableNunjucks: false
+  descriptionLists: true
