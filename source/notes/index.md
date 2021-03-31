@@ -14,6 +14,8 @@ toc: true
   该篇文章整体结构和以上类似，文章底部挂了其它关于 浏览器以及 计算机网络的 文章，底部还有xmind
 - [ ] [浏览器输入 URL 后发生了什么？](https://zhuanlan.zhihu.com/p/43369093) 
   该篇文章略过了缓存和优化机制，较为精简，但是写的以及很清晰，浏览器解析流程画的图很易于理解
+<br/>
+<br/>
 - [ ] [如何系统学习计算机网络？](https://mp.weixin.qq.com/s/wL5YI5TZXl1zRY8qS--awQ) 
   由浅至深，自底向上的推荐了学习计算机网络的学习路线，相当于学习计算机网络中知识图谱
 - [ ] [万字长文爆肝 DNS 协议！](https://mp.weixin.qq.com/s/INt0UVFdFk828vY2tY6iyg) 
@@ -26,6 +28,8 @@ toc: true
   详细介绍了 TCP/IP 协议
 - [ ] [浅析HTTP缓存](https://juejin.cn/post/6944891188826603528?utm_source=gold_browser_extension) 
   介绍了 http 缓存
+- [ ] [(建议精读)HTTP灵魂之问，巩固你的 HTTP 知识体系](https://juejin.cn/post/6844904100035821575)
+- [ ] [(建议收藏)TCP协议灵魂之问，巩固你的网路底层基础  ](https://juejin.cn/post/6844904070889603085)
 
 ## 浏览器
 - [ ] [浏览器工作原理与实践](https://time.geekbang.org/column/intro/100033601)
@@ -84,10 +88,30 @@ toc: true
 - [ ] [2020三元同学春招阿里淘系、阿里云、字节跳动面经 & 个人成长经验分享](https://juejin.cn/post/6844904106537009159)
 - [ ] [一年半前端人的求职路](https://juejin.cn/post/6940058373534515237) 
   入职有赞的大佬
+- [ ] [面试记录总结](https://github.com/CavsZhouyou/Front-End-Interview-Notebook/blob/master/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95.md) 
+
+## 面试题
+- [ ] [木易杨前端进阶](https://muyiy.cn/)
+- [ ] [2万字 | 前端基础拾遗90问](https://juejin.cn/post/6844904116552990727)
+- [ ] [「面试题」20+Vue面试题整理](https://juejin.cn/post/6844904084374290446)
+  vue 所有所有涉及到的基本面试都提到了
+- [ ] [vue2.x知识汇总，收藏给自己看。](https://juejin.cn/post/6936061897892429855?utm_source=gold_browser_extension)
+  vue2.x的所有基本面试题
+- [ ] [要就来45道Promise面试题一次爽到底(1.1w字用心整理)](https://juejin.cn/post/6844904077537574919#heading-16)
+  基本上涉及到了所有的 promise 面试题
+- [ ] [计算机网络知识总结](https://github.com/CavsZhouyou/Front-End-Interview-Notebook/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.md)
+- [ ] [HTML 面试知识点总结](https://github.com/CavsZhouyou/Front-End-Interview-Notebook/blob/master/Html/Html.md) 
+- [ ] [CSS 面试知识点总结](https://github.com/CavsZhouyou/Front-End-Interview-Notebook/blob/master/Css/Css.md) 
+- [ ] [JavaScript 面试知识点总结](https://github.com/CavsZhouyou/Front-End-Interview-Notebook/blob/master/JavaScript/JavaScript.md) 
+  算是面试必须必刷的面试题了
 
 ## 学习路线
 - [ ] [写给大家的高级前端进阶路线](https://github.com/sl1673495/frontend-roadmap) 
   文中分享了很多知识的学习路线，很有参考意义
 - [ ] [🔥跳槽人速来，面经&资源分享](https://juejin.cn/post/6942988170208215076#heading-13)
+- [ ] [每月更新的学习路线](https://github.com/Geekhyt/front-end-canteen/)
+  整理的还挺不错
+- [ ] [字节跳动的表格学习路线](https://bitable.feishu.cn/app8Ok6k9qafpMkgyRbfgxeEnet?from=logout&table=tblEnSV2PNAajtWE&view=vewJHSwJVd)
+  很全
 - [ ] [李剑飞的博客](http://lijianfei.com/) 
   多年开发经验大佬的笔记
