@@ -81,6 +81,9 @@ toc: true
   github 上一个开发者在读的过程中源码的记录，同时添加了较为详细的一些注释，作者还对每个阶段都有写对应的文章
 - [ ] [卡颂的react技术揭秘](https://react.iamkasong.com/)
 
+## Node 
+- [ ] [Libuv 之 - 只看这篇是不够的](https://juejin.cn/post/6945702722645524517?utm_source=gold_browser_extension)
+
 ## 数据结构与算法
 - [ ] [JavaScript 算法与数据结构](https://github.com/trekhleb/javascript-algorithms/blob/master/README.zh-CN.md)
   这个仓库包含了多种基于 JavaScript 的算法与数据结构
@@ -99,6 +102,9 @@ toc: true
   涉及到多家大厂的面试题，且node方面题目较多，文章底部还有一些其它学习资料
 - [ ] [金三银四的前端社招面经](https://mp.weixin.qq.com/s/ZMtpHUedWOH7LCvXsY4XrA)
   涉及到腾讯、阿里、字节、评多多的面试相关
+- [ ] [阿里腾讯面试梳理&个人成长经历分享](https://juejin.cn/post/6945625394154307592?utm_source=gold_browser_extension)
+
+  
 ## 面试题
 - [ ] [木易杨前端进阶](https://muyiy.cn/)
 - [ ] [2万字 | 前端基础拾遗90问](https://juejin.cn/post/6844904116552990727)
@@ -113,6 +119,7 @@ toc: true
 - [ ] [CSS 面试知识点总结](https://github.com/CavsZhouyou/Front-End-Interview-Notebook/blob/master/Css/Css.md) 
 - [ ] [JavaScript 面试知识点总结](https://github.com/CavsZhouyou/Front-End-Interview-Notebook/blob/master/JavaScript/JavaScript.md) 
   算是面试必须必刷的面试题了
+- [ ] [从一道让我失眠的 Promise 面试题开始，深入分析 Promise 实现细节](https://juejin.cn/post/6945319439772434469?utm_source=gold_browser_extension)
 
 ## 学习路线
 - [ ] [写给大家的高级前端进阶路线](https://github.com/sl1673495/frontend-roadmap) 
