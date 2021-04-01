@@ -46,7 +46,11 @@ logo:
         document.body.classList.add('night');
    }
 
-  var isNight = localStorage.getItem('night') || prefersDarkMode ? true : false;
+  if(localStorage.getItem('night')){
+    var isNight = localStorage.getItem('night') 
+  }else{
+    var isNight = prefersDarkMode ? 'true' : 'false';
+  }
 
 ```
 2.3 

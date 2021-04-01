@@ -30,7 +30,9 @@ toc: true
   介绍了 http 缓存
 - [ ] [(建议精读)HTTP灵魂之问，巩固你的 HTTP 知识体系](https://juejin.cn/post/6844904100035821575)
 - [ ] [(建议收藏)TCP协议灵魂之问，巩固你的网路底层基础  ](https://juejin.cn/post/6844904070889603085)
-
+- [ ] [经得住拷问的HTTPS原理解析](https://mp.weixin.qq.com/s/JYXfEd_BmGA1WWvUkegt2g)
+  详细的介绍了https 的原理，对称加密和非对称加密，和http的区别等
+  
 ## 浏览器
 - [ ] [浏览器工作原理与实践](https://time.geekbang.org/column/intro/100033601)
   极客时间的李兵老师 应该是目前为止讲浏览器讲的最透彻的了
@@ -47,6 +49,10 @@ toc: true
   搭建一个基本的 CI/CD
 - [ ] [带你入门前端工程](https://github.com/woai3c/introduction-to-front-end-engineering)
 对前端工程化有一个全面、清晰的了解
+
+## 服务器相关
+- [ ] [nginx笔记](https://blog.csdn.net/qq_42813491/article/details/103117799?ops_request_misc=%25257B%252522request%25255Fid%252522%25253A%252522160938095216780302981460%252522%25252C%252522scm%252522%25253A%25252220140713.130102334.pc%25255Fblog.%252522%25257D&request_id=160938095216780302981460&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_v2~rank_v29-1-103117799.pc_v2_rank_blog_default&utm_term=nginx)
+  比较入门的 nginx 笔记
 
 ## Vue 3
 - [ ] [Vue.js 3.0 源码核心解析](https://kaiwu.lagou.com/course/courseInfo.htm?courseId=326#/content) 
@@ -69,18 +75,18 @@ toc: true
   React 官方在升级到 React 17 时修改了对 react 的JSX转换
 <br/>
 <br/>
+- [ ] [若川的源码系列](https://juejin.cn/user/1415826704971918/posts)
+  涉及到 koa、 redux、 vuex、 lodash 等源码解析
 - [ ] [React 源码调试环境](https://github.com/neroneroffy/react-source-code-debug)
   github 上一个开发者在读的过程中源码的记录，同时添加了较为详细的一些注释，作者还对每个阶段都有写对应的文章
+- [ ] [卡颂的react技术揭秘](https://react.iamkasong.com/)
 
 ## 数据结构与算法
 - [ ] [JavaScript 算法与数据结构](https://github.com/trekhleb/javascript-algorithms/blob/master/README.zh-CN.md)
   这个仓库包含了多种基于 JavaScript 的算法与数据结构
-
-<!-- ## webpack
-
-## flutter -->
-
-
+- [ ] [写给前端的算法进阶指南，我是如何两个月零基础刷200题](https://juejin.cn/post/6847009772500156429)
+  算法的学习方式
+- [ ] [政采云团队 算法 101：JavaScript 描述](https://101.zoo.team/)
 
 ## 面试分享
 - [ ] [三年前端寒冬入大厂，收获蚂蚁、字节 offer 面经分享](https://www.imooc.com/article/305109)
@@ -89,7 +95,10 @@ toc: true
 - [ ] [一年半前端人的求职路](https://juejin.cn/post/6940058373534515237) 
   入职有赞的大佬
 - [ ] [面试记录总结](https://github.com/CavsZhouyou/Front-End-Interview-Notebook/blob/master/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95.md) 
-
+- [ ] [历时将月,七厂同约,终入字节--应届小前端的破局之路](https://mp.weixin.qq.com/s/rJNkEHuNYHdpsuBxBn4dcg)
+  涉及到多家大厂的面试题，且node方面题目较多，文章底部还有一些其它学习资料
+- [ ] [金三银四的前端社招面经](https://mp.weixin.qq.com/s/ZMtpHUedWOH7LCvXsY4XrA)
+  涉及到腾讯、阿里、字节、评多多的面试相关
 ## 面试题
 - [ ] [木易杨前端进阶](https://muyiy.cn/)
 - [ ] [2万字 | 前端基础拾遗90问](https://juejin.cn/post/6844904116552990727)
@@ -115,3 +124,5 @@ toc: true
   很全
 - [ ] [李剑飞的博客](http://lijianfei.com/) 
   多年开发经验大佬的笔记
+
+<!-- ## webpack ## flutter -->
