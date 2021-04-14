@@ -1,3 +1,12 @@
+---
+title: webpack-1 补充
+date: 2021-3-24 10:31:10
+toc: true
+---
+webpack-1 补充
+
+<!-- more -->
+
 content 为 静态目录提供地址，并且会先读取 output 中的 path，再读取 dev 中的 contentPath
 ouput.publicPath 可能会指向 cdn，比如七牛
 

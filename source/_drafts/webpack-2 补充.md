@@ -1,3 +1,12 @@
+---
+title: webpack-2 补充
+date: 2021-3-24 10:31:10
+toc: true
+---
+webpack-2 补充
+
+<!-- more -->
+
 webpack 没有 bundle 这个概念
 只有 assets 概念，静态资源，可以把它俩理解为相同的
 
