@@ -80,7 +80,7 @@ toc: true
 - [ ] [React 源码调试环境](https://github.com/neroneroffy/react-source-code-debug)
   github 上一个开发者在读的过程中源码的记录，同时添加了较为详细的一些注释，作者还对每个阶段都有写对应的文章
 - [ ] [卡颂的react技术揭秘](https://react.iamkasong.com/)
-
+- [ ] [React Scheduler 为什么使用 MessageChannel 实现](https://juejin.cn/post/6953804914715803678?utm_source=gold_browser_extension)
 ## Node 
 - [ ] [Libuv 之 - 只看这篇是不够的](https://juejin.cn/post/6945702722645524517?utm_source=gold_browser_extension)
 
