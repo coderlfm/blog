@@ -106,7 +106,8 @@ toc: true
 - [ ] [拼多多和酷家乐面试总结](https://mp.weixin.qq.com/s/HeEZN9f3ELh4PaXEbk6gKQ)
 - [ ] [一位平凡人的春招面经汇总](https://mp.weixin.qq.com/s/h4vgYeP1M0MwB7dl-lhA3g)
 - [ ] [一年半经验的前端面经总结](https://juejin.cn/post/6944687690398826503)
-  
+- [ ] [拿了微软、蚂蚁、头条 offer，这就是我面了42场得到的方法论！](https://mp.weixin.qq.com/s/wETc4U9_aPpYbHk9cyxCHQ)
+ 
 ## 面试题
 - [ ] [看过 100 份前端简历之后，汇总一下常见的问题](https://juejin.cn/post/6947863151761162276)
   介绍简历该怎么更好的写
@@ -138,4 +139,6 @@ toc: true
 - [ ] [李剑飞的博客](http://lijianfei.com/) 
   多年开发经验大佬的笔记
 
+## 优秀博客
+- [ ] [面了42场的百度打包博客](http://pea3nut.blog/)
 <!-- ## webpack ## flutter -->
