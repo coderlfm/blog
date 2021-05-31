@@ -126,6 +126,11 @@ footer:
         Download on GitHub:
             icon: fab fa-github
             url: 'https://github.com/coderlfm'
+# 备案            
+beian:
+    title: xxxxxx备案号
+    url: xxxurl
+
 # Article related configurations
 article:
     # Code highlight settings
@@ -218,7 +223,7 @@ sidebar:
     # Left sidebar configurations
     left:
         # Whether the sidebar sticks to the top when page scrolls
-        sticky: true
+        sticky: false
     # Right sidebar configurations
     right:
         # Whether the sidebar sticks to the top when page scrolls
@@ -287,7 +292,7 @@ widgets:
     # Recent posts widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
-        position: left
+        position: right
         type: recent_posts
     # Archives widget configurations
     -
@@ -297,13 +302,13 @@ widgets:
     # Categories widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
-        position: right
+        position: left
         type: categories
 
     # Tags widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
-        position: right
+        position: left
         type: tags
     # Google FeedBurner email subscription widget configurations
     -

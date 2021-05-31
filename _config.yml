@@ -70,7 +70,7 @@ prismjs:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 50
+  per_page: 10
   order_by: -date
 
 # Category & Tag
@@ -105,7 +105,8 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: icarus
+# theme: icarus
+theme: fluid  
 
 
 # Deployment
