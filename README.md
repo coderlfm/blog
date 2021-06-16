@@ -1,4 +1,18 @@
-## 适配暗黑模式
+## 修改 `code` 样式
+
+`node_modules\hexo-theme-fluid\source\css\_pages\_base\base.styl` 29行，将以下代码注释
+
+```styl
+code
+  color inherit
+```
+## 添加封面图字段配置
+由于之前使用的 `icarus` 主题，配置封面图的配置不一致，为了兼容 `node_modules\hexo-theme-fluid\layout\index.ejs` 中 12行修改为以下
+``` exj
+  <% var post_url = url_for(post.path), index_img = post.index_img || post.cover || theme.post.default_index_img %>
+```
+
+<!-- ## 适配暗黑模式
 
 https://github.com/ppoffice/hexo-theme-icarus/issues/564
 
@@ -63,4 +77,4 @@ logo:
 ```
 
 3. 重新打包生成静态文件
-
+ -->
