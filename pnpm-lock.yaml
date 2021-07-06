@@ -10,6 +10,7 @@ specifiers:
   hexo-generator-category: ^1.0.0
   hexo-generator-index: ^2.0.0
   hexo-generator-tag: ^1.0.0
+  hexo-githubcalendar: ^1.2.3
   hexo-renderer-ejs: ^1.0.0
   hexo-renderer-inferno: ^0.1.3
   hexo-renderer-marked: ^4.0.0
@@ -29,6 +30,7 @@ dependencies:
   hexo-generator-category: 1.0.0
   hexo-generator-index: 2.0.0
   hexo-generator-tag: 1.0.0
+  hexo-githubcalendar: 1.2.3
   hexo-renderer-ejs: 1.0.0
   hexo-renderer-inferno: 0.1.3
   hexo-renderer-marked: 4.0.0
@@ -2866,6 +2868,10 @@ packages:
     engines: {node: '>=8.6.0'}
     dependencies:
       hexo-pagination: 1.0.0
+    dev: false
+
+  /hexo-githubcalendar/1.2.3:
+    resolution: {integrity: sha512-xMfp2Z11F57s0/q7N9x+S2ui5dkrOiz5I3+TKPL+2IquWKj11wpaVZsPDgMxPAU8B6AYm/78S5e2APiHADPYSg==}
     dev: false
 
   /hexo-i18n/1.0.0:

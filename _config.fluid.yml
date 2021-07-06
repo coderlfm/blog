@@ -311,7 +311,7 @@ navbar:
     - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
     - { key: "笔记", link: "/notes/", icon: "iconfont icon-book" }
-    #- { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
+    - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
 
 # 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
 # Search feature, based on hexo-generator-search. If you have installed other search plugins, please disable this feature to avoid generating redundant index files
@@ -413,6 +413,7 @@ footer:
 # Home Page
 #---------------------------
 index:
+
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
   # banner_img: https://qiniu-oss.liufengmao.cn//blog/bannerimg-2fb37dd64ae0969b9ddd41238257f8ae%282%29.jpg
@@ -440,11 +441,11 @@ index:
     # 通过 API 接口作为首页副标题的内容，必须返回的是 JSON 格式，如果请求失败则按 text 字段显示，该功能必须先开启 typing 打字机功能
     # Subtitle of the homepage through the API, must be returned a JSON. If the request fails, it will be displayed in `text` value. This feature must first enable the typing animation
     api:
-      enable: false
+      enable: true
 
       # 请求地址
       # Request url
-      url: ""
+      url: "https://v1.hitokoto.cn?c=d&c=e&c=f&c=h&c=j&c=k"
 
       # 请求方法
       # Request method
@@ -457,7 +458,7 @@ index:
 
       # 从请求结果获取字符串的取值字段，最终必须是一个字符串，例如返回结果为 {"data": {"author": "fluid", "content": "An elegant theme"}}, 则取值字段为 ['data', 'content']；如果返回是列表则自动选择第一项
       # The value field of the string obtained from the response. For example, the response content is {"data": {"author": "fluid", "content": "An elegant theme"}}, the expected `keys: ['data','content']`; if the return is a list, the first item is automatically selected
-      keys: []
+      keys: ['hitokoto']
 
   # 自动截取文章摘要
   # Auto extract post
@@ -483,6 +484,7 @@ index:
     icon: "iconfont icon-top"
 
   post_limit: 10
+
 
 #---------------------------
 # 文章页
@@ -895,23 +897,23 @@ links:
   # Member item of page
   items:
     - {
-      title: "Fluid Blog",
-      intro: "主题博客",
-      link: "https://hexo.fluid-dev.com/",
-      avatar: "/img/favicon.png"
+      title: "曦小站",
+      intro: "简单的事用心做，用心的事重复做",
+      link: "https://ascd.top/",
+      avatar: "https://blog-koa.oss-cn-shanghai.aliyuncs.com/948d73d9f0cb6fde3a0b25b805c1dbff.png"
     }
-    - {
-      title: "Fluid Docs",
-      intro: "主题使用指南",
-      link: "https://hexo.fluid-dev.com/docs/",
-      avatar: "/img/favicon.png"
-    }
-    - {
-      title: "Fluid Repo",
-      intro: "主题 GitHub 仓库",
-      link: "https://github.com/fluid-dev/hexo-theme-fluid",
-      avatar: "/img/favicon.png"
-    }
+    # - {
+    #   title: "Fluid Docs",
+    #   intro: "主题使用指南",
+    #   link: "https://hexo.fluid-dev.com/docs/",
+    #   avatar: "/img/favicon.png"
+    # }
+    # - {
+    #   title: "Fluid Repo",
+    #   intro: "主题 GitHub 仓库",
+    #   link: "https://github.com/fluid-dev/hexo-theme-fluid",
+    #   avatar: "/img/favicon.png"
+    # }
 
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
