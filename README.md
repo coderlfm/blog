@@ -12,6 +12,23 @@ code
   <% var post_url = url_for(post.path), index_img = post.index_img || post.cover || theme.post.default_index_img %>
 ```
 
+## 自定义 css 
+在 `cource/css` 下新建 `custom.css`，并新增以下内容
+
+``` css
+.markdown-body p, li {
+  line-height: 2em;
+}
+
+.markdown-body img {
+  margin-bottom: 16px;
+}
+
+.code-wrapper pre .caption {
+  color: #fff;
+}
+```
+
 <!-- ## 适配暗黑模式
 
 https://github.com/ppoffice/hexo-theme-icarus/issues/564
