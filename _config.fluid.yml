@@ -905,7 +905,7 @@ links:
     - {
       title: "XXLoki博客",
       intro: "书痴者文必工，艺痴者技必良。",
-      link: "https://weissdeng.github.io/",
+      link: "http://www.weissdeng.com/",
       avatar: "https://i.loli.net/2021/07/06/3X5yGSY9kWqpsnH.jpg"
     }
     - {
@@ -913,6 +913,12 @@ links:
       intro: "生活要有仪式感，认真生活!",
       link: "https://blog.wangmeng.pro/",
       avatar: "https://cdn.jsdelivr.net/gh/RobinWM/cdn@2.0/img/custom/avatar.jpg"
+    }
+    - {
+      title: "毛毛的 BLOG",
+      intro: "每一个不曾起舞的日子都是对生命的辜负",
+      link: "https://tianjixian01.gitee.io/",
+      avatar: "https://tianjixian01.gitee.io/img/logo.png"
     }
 
   # 当成员头像加载失败时，替换为指定图片
