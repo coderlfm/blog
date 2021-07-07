@@ -902,18 +902,18 @@ links:
       link: "https://ascd.top/",
       avatar: "https://blog-koa.oss-cn-shanghai.aliyuncs.com/948d73d9f0cb6fde3a0b25b805c1dbff.png"
     }
-    # - {
-    #   title: "Fluid Docs",
-    #   intro: "主题使用指南",
-    #   link: "https://hexo.fluid-dev.com/docs/",
-    #   avatar: "/img/favicon.png"
-    # }
-    # - {
-    #   title: "Fluid Repo",
-    #   intro: "主题 GitHub 仓库",
-    #   link: "https://github.com/fluid-dev/hexo-theme-fluid",
-    #   avatar: "/img/favicon.png"
-    # }
+    - {
+      title: "XXLoki博客",
+      intro: "书痴者文必工，艺痴者技必良。",
+      link: "https://weissdeng.github.io/",
+      avatar: "https://i.loli.net/2021/07/06/3X5yGSY9kWqpsnH.jpg"
+    }
+    - {
+      title: "RobinWang",
+      intro: "生活要有仪式感，认真生活!",
+      link: "https://blog.wangmeng.pro/",
+      avatar: "https://cdn.jsdelivr.net/gh/RobinWM/cdn@2.0/img/custom/avatar.jpg"
+    }
 
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
