@@ -1,6 +1,6 @@
 ---
-title: TypeScript 笔记
-date: 2021-07-16 13:300:38
+title: TypeScript 基本数据类型
+date: 2021-07-16 13:30:38
 tags:
 - javaScript
 categories:

@@ -16,6 +16,14 @@ code
 在 `cource/css` 下新建 `custom.css`，并新增以下内容
 
 ``` css
+@font-face {
+  font-family: 'JetBrainsMono-Regular';
+  src: url(./font/dc4a787d9fe96142a846de9989ca233d.eot);
+  src: url(./font/d4ff51ff52d30f839d5be70c33bf872e.woff) format('woff'), 
+  url(./font/3eacd63796de4b39bc102dae7b143ca5.woff2) format('woff2'), 
+  url(./font/e1caef645de334fee2f25834b0d03c28.ttf) format('truetype');
+}
+
 .markdown-body p, li {
   line-height: 2em;
 }
@@ -23,6 +31,19 @@ code
 .markdown-body img {
   margin-bottom: 16px;
 }
+.markdown-body code, .markdown-body pre {
+  font-family: JetBrainsMono-Regular,SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace !important;
+}
+
+.code-wrapper pre {
+  font-family: JetBrainsMono-Regular,SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace !important;
+}
+
+.markdown-body .hljs pre {
+  background-color: #282A36 !important;
+  /* background-color: #161B22 !important; */
+}
+
 
 .code-wrapper pre .caption {
   color: #fff;
