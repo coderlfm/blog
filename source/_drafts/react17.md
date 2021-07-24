@@ -43,7 +43,7 @@ react 17 的更改
 
 ## 返回 undefined 的错误
 
-以前，React 只对 class 和函数组件执行此操作，但并不会检查 forwardRef 和 memo 组件的返回值。这是由于编码错误导致。
+以前，React 只对 class 和函数组件执行此操作，但并不会检查 forwardRef 和 memo 组件的返回值。这是编码错误的原因。
 
 <b>在 React 17 中，forwardRef 和 memo 组件的行为会与常规函数组件和 class 组件保持一致。在返回 undefined 时会报错</b>
 
