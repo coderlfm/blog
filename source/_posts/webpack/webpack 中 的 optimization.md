@@ -9,7 +9,7 @@ categories:
 - Webpack
 
 
-cover: http://qiniu-oss.liufengmao.cn/blog/cover-imgs/webpack.jpg
+cover: /cover-imgs/webpack.jpg
 
 ---
 webpack 中可以通过对 optimization 配置来对我们项目进行一些优化

@@ -8,7 +8,7 @@ tags:
 categories:
 - Webpack
 
-cover: http://qiniu-oss.liufengmao.cn/blog/cover-imgs/webpack.jpg
+cover: /cover-imgs/webpack.jpg
 
 ---
 

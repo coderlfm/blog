@@ -10,7 +10,7 @@ categories:
 - Flutter
 - Dart
 
-cover: http://qiniu-oss.liufengmao.cn/blog/cover-imgs/dart2.png
+cover: /cover-imgs/dart2.png
 ---
 StatelessWidget 及 StatefulWidget
 <!-- more -->

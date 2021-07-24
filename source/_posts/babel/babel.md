@@ -8,7 +8,7 @@ tags:
 categories:
 - Webpack
 
-cover: http://qiniu-oss.liufengmao.cn/blog/cover-imgs/babel1.png
+cover: /cover-imgs/babel1.png
 ---
 
 `babel` 是一个 `JavaScript` 编译器，可以将 `es2015+` 的代码转换成向后兼容的 `javaScript` 代码，使我们在低版本浏览器中能够正常运行

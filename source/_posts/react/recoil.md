@@ -9,7 +9,7 @@ tags:
 categories:
 - javaScript
 
-cover: http://qiniu-oss.liufengmao.cn/blog/cover-imgs/recoil.png
+cover: /cover-imgs/recoil.png
 
 ---
 Recoil 是 FaceBook 的一个 React 的一个状态管理库

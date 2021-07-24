@@ -8,7 +8,7 @@ tags:
 categories:
 - Webpack
 
-cover: http://qiniu-oss.liufengmao.cn/blog/cover-imgs/webpack.jpg
+cover: /cover-imgs/webpack.jpg
 
 ---
 devServer 可以帮助我们在本地起一个服务器来更便捷的帮助我们开发
