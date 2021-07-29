@@ -5,14 +5,13 @@ tags:
   - Leran
 categories:
   - Leran
-cover: /cover-imgs/leran.png
+cover: /cover-imgs/lerna.png
 ---
 
-Lerna 的基本使用
+多 package 管理工具 lenra 的基本使用
 
 <!-- more -->
 
-<!-- #  -->
 
 当我们项目大起来且项目间相互依赖的东西多起来，项目管理起来就会很困难，`Leran`的出现揭示了一个真理，当项目复杂度提升时，就需要做架构优化，
 
@@ -122,7 +121,7 @@ leran create utils
 
 
 
-![](/image/leran/Lerna的基本使用/Snipaste_2021-07-26_14-13-46.png)
+![](/image/lerna/Lerna的基本使用/Snipaste_2021-07-26_14-13-46.png)
 
 
  
@@ -160,14 +159,14 @@ module.exports = {
 
 
 
-![](/image/leran/Lerna的基本使用/Snipaste_2021-07-26_14-29-02.png)
+![](/image/lerna/Lerna的基本使用/Snipaste_2021-07-26_14-29-02.png)
 
 
   
 
 
 
-![](/image/leran/Lerna的基本使用/Snipaste_2021-07-26_14-30-17.png)
+![](/image/lerna/Lerna的基本使用/Snipaste_2021-07-26_14-30-17.png)
 
 
  

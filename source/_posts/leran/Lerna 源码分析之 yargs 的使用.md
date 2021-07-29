@@ -5,14 +5,13 @@ tags:
   - Leran
 categories:
   - Leran
-cover: /cover-imgs/leran.png
+cover: /cover-imgs/lerna.png
 ---
 
-Lerna 的基本使用
+Yargs 通过解析参数和生成优雅的用户界面来帮助您构建交互式命令行工具。
 
 <!-- more -->
 
-<!-- # Lerna 源码分析之 yargs 的使用 -->
 
 ## 源码入口
 
