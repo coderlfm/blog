@@ -1,21 +1,54 @@
 ---
 title: Lerna 源码分析之 import-local 下
-date: 2021-07-28 11:30:38
+date: 2021-07-29 11:30:38
 tags:
-  - Leran
+  - Lerna
 categories:
-  - Leran
+  - Lerna
 cover: /cover-imgs/lerna.png
 ---
 
-`import-local` 是一个可以让全局和本地安装了同一个包时，优先使用本地的
+`import-local` 可以让全局和本地安装了同一个模块时，优先使用本地模块
 
 <!-- more -->
 
+<!-- # Lerna 源码分析之 import-local 下 -->
 
-# Lerna 源码分析之 import-local 下
+# import-local 源码
 
-这一节从 `第10 行` 开始看起，这行代码非常关键，因为它的作用，当我们全局和本地都安装了 `Lerna` 的时候，它会帮我们优先使用本地的 `Lerna`。
+`import-local` 主要做了以下几件事
+
+1. 这个模块全局目录，会向上去找最近的 `package.json` 所在的目录
+
+2. 拿到这个模块的入口文件 相对于 模块根路径 的相对路径
+
+3. 拿到这个模块在本地的路径(如果本地有安装的情况下)
+
+4. 判断 **本地 node_modules 路径**  和 **全局模块的路径**  是否 `..` 开头
+
+5. 判断是否加载本地模块
+
+&ensp;&ensp;&ensp;&ensp;1. 判断 4 是否为 true
+
+&ensp;&ensp;&ensp;&ensp;2. 判断3 是否有值
+
+&ensp;&ensp;&ensp;&ensp;3. 判断 3 是否和全局模块入口的地址不相等
+
+6. 以上判断都满足的话，使用本地的模块 `require(localFile)`
+
+7. 不满足的话会 `return undefinde`，会使用全局的模块
+
+
+这里我们需要深入看的源码一共有两个 
+
+- `pkgDir.sync(path.dirname(filename))` ： 向上找到最近的 `package.json` 所在的路径
+
+- `resolveCwd.silent(path.join(pkg.name, relativePath))`：找这个模块在本地的路径(如果本地有安装)
+
+
+> 这一节我们会深入 `resolveCwd.silent(path.join(pkg.name, relativePath))` 
+
+
 
 ```JavaScript
 'use strict';
@@ -24,30 +57,46 @@ const resolveCwd = require('resolve-cwd');
 const pkgDir = require('pkg-dir');
 
 module.exports = filename => {
+  // 拿到这个模块的根路径， 会依次向上查找距离最近的 package.json 目录
   const globalDir = pkgDir.sync(path.dirname(filename));
+  
+  // 得到 模块入口 相对于 模块根路径 的相对路径 (cli.js)
   const relativePath = path.relative(globalDir, filename);
+  
+  // 读取 模块根路径的 package.json
   const pkg = require(path.join(globalDir, 'package.json'));
+  
+  // 取到模块package.json的name，lerna 中 package.json 的 name 属性取到 (lerna)
+  // 以及 lerna 入口文件相对于 package.json 所在的地址 (cli.js)
+  // 将 模块根路径 和 模块入口 拼接起来，进行拼接成一个 path (lenam/cli.js)
+  // 如果本地也有 安装 lerna 会得到本地的 lerna 地址
   const localFile = resolveCwd.silent(path.join(pkg.name, relativePath));
+  
+  // 根据 命令行所在的路径 拼接上 node_modules 生成一个 本地项目node_modules路径
   const localNodeModules = path.join(process.cwd(), 'node_modules');
+  
+  // 判断 本地本地项目node_modules路径 和 这个全局模块所在的目录是否 .. 开头，这个取反，其实没有必要
   const filenameInLocalNodeModules = !path.relative(localNodeModules, filename).startsWith('..');
-
+  
+  // 如果本地有 lerna 则会加载本地的，否则返回 undefined 
   return !filenameInLocalNodeModules && localFile && path.relative(localFile, filename) !== '' && require(localFile);
 };
 ```
 
 
+可以看到 `pkgDir.sync(path.dirname(filename))`  主要调用了 `pkg-dir` 这个库，且将全局的 `lerna` 入口文件的路径传了进去，例如我这里是(`'C:\\Users\\37564\\AppData\\Roaming\\npm\\node_modules\\lerna'`)
+
 
 # resolve-cwd
 
-
-可以看到 第10 行主要是 使用 `resolve-cwd` 这个库，而这个库其实也不是主要实现，他主要是调用了 `resolve-from` 这个库
-
+可以看到 第20 行主要是 使用 `resolve-cwd` 这个库，而这个库其实也不是主要实现，他主要是调用了 `resolve-from` 这个库
 
 ```JavaScript
 'use strict';
 const resolveFrom = require('resolve-from');
 
 module.exports = moduleId => resolveFrom(process.cwd(), moduleId);
+// moduleId: 'lerna\\cli.js'
 module.exports.silent = moduleId => resolveFrom.silent(process.cwd(), moduleId);
 ```
 
@@ -58,11 +107,20 @@ module.exports.silent = moduleId => resolveFrom.silent(process.cwd(), moduleId);
 
 这个库的源码其实也比较简单
 
-它主要是先通过获取一个所有可能存在 `node_modules`的 `paths` 数组，然后再尝试`paths` 通过 `paths` 去找这个模块
+- 接收到传入的 开始查找的路径 和 需要 查找的 模块 (`'lerna\\cli.js'`)
 
-这里的关键代码是 `Module._resolveFilename` 和 `Module._nodeModulePaths()` 
+- 它主要是先通过`Module._nodeModulePaths(fromDirectory)`  获取这个模块所有可能存在 `node_modules`的 `paths` 数组
 
-`Module` 是 `node` 中内置的模块，`_resolveFilename` 其实也是 `require` 实现的关键函数，也就是说读完这里面的代码，我们也解开了 `require` 的原理。
+
+这里的关键代码是 `Module._resolveFilename()` 和 `Module._nodeModulePaths()` 
+
+- `Module._nodeModulePaths()` 它会根据传入 目录 生成一个所有可能存在 `node_modules`的 `paths` 数组
+
+- `Module._resolveFilename()` 找到一个真实路径，它最主要是根据 `Module._nodeModulePaths()` 生成的 paths 数组去查找
+
+
+> `Module` 是 `node` 中内置的模块，`_resolveFilename` 其实也是 `require` 实现的关键函数，也就是说读完这里面的代码，我们也解开了 `require` 的原理。
+
 
 ```JavaScript
 'use strict';
@@ -126,7 +184,25 @@ module.exports.silent = (fromDirectory, moduleId) => resolveFrom(fromDirectory, 
 
 # 生成所有可能存在的路径 Module._nodeModulePaths
 
-在阅读 `Module._resolveFilename` 之前，我们先查看 `Module._nodeModulePaths()`，它会生成一个所有可能存在的路径数组，然后将这个数组作为 `paths` 传给 `Module._resolveFilename`， 这部分的源码实现包含一部分的算法，值得我们学习
+在阅读 `Module._resolveFilename` 之前，我们先查看 `Module._nodeModulePaths()`，
+
+因为我们刚刚在上面看到了，在查找真实路径之前需要先生成一个 `paths` 数组(`Module._nodeModulePaths(fromDirectory)`)，而这个数组会根据传入的 路径 生成
+
+例如我们这里传入的是 `'E:\\learn\\learn-cli\\sunshine-cli\\packages\\core\\lib'`，那么就会根据它来生成一个数组，然后将这个数组作为 `paths` 传给 `Module._resolveFilename`， 这部分的源码实现包含一部分的算法，值得我们学习
+
+
+它会主要做以下几件事情
+
+1. 判断路径是否为 根路径，是的话直接返回 `[/node_modeles]`
+
+2. **从后往前**  开始遍历这个路径
+
+&ensp;&ensp;&ensp;&ensp;1. 每次遍历到下一个 路径分隔符 都会拼接 `/node_modules` 放到数组
+
+&ensp;&ensp;&ensp;&ensp;2.  如果这路径分隔符的目录是  `'node_modules'` ，则跳过
+
+3. 遍历结束后将 根路径(`'/node_modules'`) 也放到数组中
+
 
 ```JavaScript
 // node_modules 倒序的 charCode 数组
@@ -193,17 +269,26 @@ Module._nodeModulePaths = function (from) {
 ```
 
 
+
 `Module._nodeModulePaths()` 主要是帮我们生成所有可能存在的路径数组，列如我们在项目中引入了 `koa`，那它会生成一个逐级向上的一个目录，且每个目录后会带上 `node_modules`，
 
 这里需要注意的是，如果路径中已经存在 `node_modules`，则不会将这一级目录`push` 到 `paths` 中。
 
+## 如何校验这个路径包含 **node_modules** 
 
-在校验 **路径中是否包含 node_modules 时** ，它会这样比较：
+### 准备知识
 
-例如，我的路径为 `'E:\\learn\\learn-cli\\sunshine-cli\\packages\\core\\lib'`**，** 以下我把一个 路径分割符到下一个 路径分隔符 之间的遍历称之为 一小节 的遍历，如 `\\lib` 是一小节，`\\core` 是一小节遍历
+- nmChars： 是一个 `'node_modules'` 倒序 (`'seludom_edon'`) 的一个 `charcode` 数组(`[ 115, 101, 108, 117, 100, 111, 109, 95, 101, 100, 111, 110 ]`)
+
+- nmLen： 是这个数组的长度 (12)
 
 
-便利时 **会从后往前遍历** ，所以第一次会拿到 **字符串b 的charcode** ，那么就会拿着 **字符串b 的charcode**  和 **字符串 s 的charcode** (node_modules 字符串charcode的倒序数组) 做比较，
+以下我会把 **一个路径分割符 到 下一个路径分隔符 之间的遍历**  称之为 一小节的遍历，如 `\\lib` 是一小节，`\\core` 是一小节遍历
+
+
+例如，我的路径为 `'E:\\learn\\learn-cli\\sunshine-cli\\packages\\core\\lib'`**，** 
+
+便利时 **会从后往前遍历** ，所以第一次会拿到 **字符串b 的charcode** ，那么就会拿着 **字符串b 的charcode**  和 **字符串 s 的charcode**  做比较，
 
 - 如果不相等，那么直到下一个路径分隔符之前的遍历( 字符串 i, b的charcode ) 都不需要做比较了，这个优化的关键就是 **变量p** 。
 
@@ -301,7 +386,7 @@ Module._resolveFilename = function(request, parent, isMain, options) {
 
 
 
-# 开始查找模块真实路径 Module._findPath
+# 开始查找Module._findPath
 
 `Module._findPath()` 主要做以下几件事
 
@@ -434,7 +519,7 @@ function toRealPath(requestPath) {
 
 
 
-# fs.realpathSync 源码
+# 软链接转真实地址fs.realpathSync 
 
 `fs.realpathSync()` 主要做以下几件事
 
@@ -442,7 +527,7 @@ function toRealPath(requestPath) {
 
 2. 从左往右遍历这个路径字符串，依次将每个路径转换为真实路径
 
-&ensp;&ensp;&ensp;&ensp;1. 尝试从缓存中尝试获取，如果不是软链接则 `continue`，否则 中断
+&ensp;&ensp;&ensp;&ensp;1. 尝试从缓存中尝试获取，如果是取到的是一个真实地址则 `continue`，否则 中断
 
 &ensp;&ensp;&ensp;&ensp;2. 取到这个路径或文件的 `lstat`，判断是否为软连接，如果不是则将其缓存，并且 **重新执行第 2 步** 
 
@@ -450,7 +535,7 @@ function toRealPath(requestPath) {
 
 &ensp;&ensp;&ensp;&ensp;4. 并将软链接的真实地址缓存到 `cache`，在 `unix 系统` 中还会缓存在 `seenLinks`
 
-&ensp;&ensp;&ensp;&ensp;5. 将真实地址和 文件后缀 进行拼接，然后 **重新执行 第2 步** ，因为拼接后的路径依旧有可能有软链接(使用 `pnpm` 的话就会有很多软链接)，所以需要再次循环，转换为真实地址，但是后续会更快，因为之前做过缓存
+&ensp;&ensp;&ensp;&ensp;5. 将真实地址和 文件后缀 进行拼接，然后 **重新执行第2 步** ，因为拼接后的路径依旧有可能有软链接(使用 `pnpm` 的话就会有很多软链接)，所以需要再次循环，转换为真实地址，但是后续会更快，因为之前做过缓存
 
 3. 遍历结束后，将其 原始地址 作为 `key`，真实地址作为 `value` 缓存，
 
@@ -652,9 +737,7 @@ function realpathSync(p, options) {
 ![](/image/lerna/Lerna源码分析之import_local下/Snipaste_2021-07-29_10-22-55.png)
 
 
-
  
-
 
 ## 软链接如何转换为真实地址？
 
@@ -818,8 +901,6 @@ module.exports = filename => {
 这行代码乍一看没啥问题，他调用了 `path.relative` 来得到一个相对路径，然后来判断是否为 `..` 开头
 
 
-<!-- --- -->
-
 `path.relative()` 方法根据当前工作目录返回从 `from` 到 `to` 的相对路径。 如果 `from` 和 `to` 都解析为相同的路径（在分别调用 `path.resolve()` 之后），则返回零长度字符串。
 
 ```JavaScript
@@ -869,4 +950,14 @@ module.exports = filename => {
 };
 ```
 
+
+
+# 流程图
+
+最后附上一张 完整的流程图
+
+![](/image/lerna/Lerna源码分析之import_local下/impor-local.png)
+
+
+&ensp;&ensp;&ensp;&ensp;
 
