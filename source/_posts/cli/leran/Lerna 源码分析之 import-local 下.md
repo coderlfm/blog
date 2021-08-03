@@ -1,10 +1,10 @@
 ---
 title: Lerna 源码分析之 import-local 下
 date: 2021-07-29 11:30:38
-tags:
-  - Lerna
 categories:
-  - Lerna
+  - CLI
+tags:
+  - Leran
 cover: /cover-imgs/lerna.png
 ---
 

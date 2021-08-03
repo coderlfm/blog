@@ -1,9 +1,9 @@
 ---
 title: Lerna 源码分析之 yargs 的使用
 date: 2021-07-27 10:30:38
-tags:
-  - Leran
 categories:
+  - CLI
+tags:
   - Leran
 cover: /cover-imgs/lerna.png
 ---
