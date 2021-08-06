@@ -3,7 +3,7 @@ title: 前端模块化规范
 date: 2020-10-29 20:40:05
 toc: true
 tags:
-- node
+- Node
 categories: 
 - [Node ]
 

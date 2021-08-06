@@ -3,6 +3,9 @@ title: mysql 常用语句
 date: 2021-3-24 10:31:10
 toc: true
 tags:
+- Node
+categories: 
+- [Node ]
 cover: /cover-imgs/mysql.jpg
 ---
 
