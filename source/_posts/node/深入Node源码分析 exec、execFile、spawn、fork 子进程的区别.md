@@ -13,6 +13,24 @@ categories:
 
 <!-- more -->
 
+## readline 源码调用栈流程图
+首先奉上几张源码调用栈流程图
+### 完整源码调用栈图
+
+图片放大后看的更清晰
+![](</image/node/深入node源码分析exec、execFile、spawn区别/node%20%E5%A4%9A%E8%BF%9B%E7%A8%8B%20%E6%B5%81%E7%A8%8B%E5%9B%BE%20(2).svg>)
+### 异步回调流程
+
+当所有的同步代码运行完成时候，会开始执行异步回调
+
+异步回调的流程如下
+
+![](/image/node/深入node源码分析exec、execFile、spawn区别/Snipaste_2021-08-06_08-10-57.png)
+
+![](/image/node/深入node源码分析exec、execFile、spawn区别/Snipaste_2021-08-06_08-15-52.png)
+
+
+
 ## 认识 child_process
 
 `node` 内置了一个 `child_process` 模块，通过该模块可以衍生出子进程，让子进程来帮助我们做一些其他的操作，有关 child_process 的更多信息，可以查看 [这里](http://nodejs.cn/api/child_process.html#child_process_child_process)
@@ -907,17 +925,3 @@ function spawn(file, args, options) {
   }
 ```
 
-## 异步回调流程
-
-当所有的同步代码运行完成时候，会开始执行异步回调
-
-异步回调的流程如下
-
-![](/image/node/深入node源码分析exec、execFile、spawn区别/Snipaste_2021-08-06_08-10-57.png)
-
-![](/image/node/深入node源码分析exec、execFile、spawn区别/Snipaste_2021-08-06_08-15-52.png)
-
-## 完整源码调用栈图
-
-图片放大后看的更清晰
-![](</image/node/深入node源码分析exec、execFile、spawn区别/node%20%E5%A4%9A%E8%BF%9B%E7%A8%8B%20%E6%B5%81%E7%A8%8B%E5%9B%BE%20(2).svg>)
