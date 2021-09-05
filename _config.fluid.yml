@@ -930,6 +930,12 @@ links:
       link: "https://www.hsslive.cn/",
       avatar: "https://www.hsslive.cn/_nuxt/img/3.046364a.jpg"
     }
+    - {
+      title: "Zeruns's Blog",
+      intro: "爱折腾软件和硬件的技术宅",
+      link: "https://blog.zeruns.tech",
+      avatar: "https://blog.zeruns.tech/tx.jpg"
+    }
 
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image

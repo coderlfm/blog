@@ -79,7 +79,7 @@ flutter doctor
 
 ## 4. 安装 Android Studio 
 这里我们使用 `Android Studio` 来作为我们的开发工具
-下载并安装 [Android Studio]()。
+下载并安装 [Android Studio](https://android-studio.en.softonic.com/)。
 
 ### 4.1 安装 Android SDK 
 
