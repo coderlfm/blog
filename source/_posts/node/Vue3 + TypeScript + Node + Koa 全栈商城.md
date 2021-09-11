@@ -282,7 +282,7 @@ cover: /cover-imgs/vue-logo.svg
 ## 后端接口
 
 后端接口 商城端 和 管理端部署在同一台服务器，接口文档采用 `apifox` 
-<a  href="/assets/tea-interface-doc.html" target="_blank" >接口文档</a>
+<a  href="/assets/mall.html" target="_blank" >接口文档</a>
 
-<iframe src="/assets/tea-interface-doc.html" width="100%" height="1000" name="topFrame" scrolling="yes"  noresize="noresize" frameborder="0" id="topFrame"></iframe>
+<iframe src="/assets/mall.html" width="100%" height="1000" name="topFrame" scrolling="yes"  noresize="noresize" frameborder="0" id="topFrame"></iframe>
 
