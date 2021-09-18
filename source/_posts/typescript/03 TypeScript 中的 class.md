@@ -326,3 +326,84 @@ person.sayHell();
 ```
 
 
+
+## 声明类
+
+如果我们想要限制 类的构造函数和实例类型，只通过一个 `interface` 显然是不够的，所以我们需要通过两个 `interface`来声明类的类型
+
+```TypeScript
+interface IPerson {
+  name: string;
+  age: number;
+  sayHello: () => void;
+}
+
+// 定义类的构造函数及其静态属性
+interface IPersonClass {
+  new (name: string, age: number): IPerson;
+  ClassName: string;
+}
+
+// 通过双重约束来限制类的静态类型和类的实例类型
+const PersonClass: IPersonClass = class Person implements IPerson {
+  name: string;
+  age: number;
+
+  static ClassName = 'person';
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+
+  sayHello() {
+    console.log("I' m " + this.name + ', hello');
+  }
+};
+
+const p = new PersonClass('小明', 18);
+p.sayHello();  // I' m 小明, hello
+
+```
+
+
+
+### 构造函数简写方式
+
+以上代码也可以简写成以下方式
+
+```TypeScript
+interface IPerson {
+  name: string;
+  age: number;
+  sayHello: () => void;
+}
+
+// 定义类的构造函数及其静态属性
+interface IPersonClass {
+  new (name: string, age: number): IPerson;
+  ClassName: string;
+}
+
+// 通过双重约束来限制类的静态类型和类的实例类型
+const PersonClass: IPersonClass = class Person implements IPerson {
+
+
+  static ClassName = 'person';
+  
+  // 会自动将传入的参数添加到 this
+  constructor(public name: string, public age: number) {}
+
+  sayHello() {
+    console.log("I' m " + this.name + ', hello');
+  }
+};
+
+const p = new PersonClass('小明', 18);
+p.sayHello();
+
+```
+
+
+
+
