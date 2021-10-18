@@ -19,6 +19,7 @@ cover: /cover-imgs/book.jpg
 [《JavaScript 语言精粹》修订版](https://book.douban.com/subject/11874748/)
 
 [《JavaScript 高级程序设计》第 4 版](https://book.douban.com/subject/35175321/)
+[《中国最美的100个地方》](https://book.douban.com/subject/10808725/)
 
 ## 10 月
 
