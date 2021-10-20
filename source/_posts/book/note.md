@@ -1,10 +1,7 @@
 ---
 title: 关于读书
 date: 2021-10-14 14:30:38
-tags:
-  - book
-categories:
-  - book
+
 sticky: 2
 cover: /cover-imgs/book.jpg
 ---
@@ -16,12 +13,14 @@ cover: /cover-imgs/book.jpg
 
 ## 在读
 
+[《中国最美的100个地方》](https://book.douban.com/subject/10808725/)
+[《费曼学习法（用输出倒逼输入）》](https://book.douban.com/subject/35368398/)
+
+## 10 月
+
 [《JavaScript 语言精粹》修订版](https://book.douban.com/subject/11874748/)
 
 [《JavaScript 高级程序设计》第 4 版](https://book.douban.com/subject/35175321/)
-[《中国最美的100个地方》](https://book.douban.com/subject/10808725/)
-
-## 10 月
 
 [《被讨厌的勇气》](https://book.douban.com/subject/26369699/)
 
