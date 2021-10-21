@@ -15,6 +15,7 @@ cover: /cover-imgs/book.jpg
 
 [《中国最美的100个地方》](https://book.douban.com/subject/10808725/)
 [《费曼学习法（用输出倒逼输入）》](https://book.douban.com/subject/35368398/)
+[《ES6标准入门》第 3 版](https://book.douban.com/subject/27127030/)
 
 ## 10 月
 
