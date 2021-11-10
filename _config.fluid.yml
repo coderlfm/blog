@@ -936,6 +936,12 @@ links:
       link: "https://blog.zeruns.tech",
       avatar: "https://blog.zeruns.tech/tx.jpg"
     }
+    - {
+      title: "小白龙导航",
+      intro: "一个程序员的导航",
+      link: "https://blog.xiaolong0418.com/",
+      avatar: "https://blog.xiaolong0418.com/logo.jpg"
+    }
 
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
