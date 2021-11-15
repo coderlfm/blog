@@ -286,3 +286,49 @@ cover: /cover-imgs/vue-logo.svg
 
 <iframe src="/assets/mall.html" width="100%" height="1000" name="topFrame" scrolling="yes"  noresize="noresize" frameborder="0" id="topFrame"></iframe>
 
+
+
+## 示例
+
+![](/image/node/vue3全栈商城/login.png)
+
+![](/image/node/vue3全栈商城/product.png)
+
+![](/image/node/vue3全栈商城/product-add.png)
+
+![](/image/node/vue3全栈商城/product-freeze.png)
+
+![](/image/node/vue3全栈商城/role.png)
+
+![](/image/node/vue3全栈商城/role-edit.png)
+
+![](/image/node/vue3全栈商城/users.png)
+
+![](/image/node/vue3全栈商城/account.png)
+
+![](/image/node/vue3全栈商城/account-edit.png)
+
+![](/image/node/vue3全栈商城/banner.png)
+
+![](/image/node/vue3全栈商城/order.png)
+
+![](/image/node/vue3全栈商城/order-edit.png)
+
+![](/image/node/vue3全栈商城/order-search.png)
+
+![](/image/node/vue3全栈商城/permission.png)
+
+![](/image/node/vue3全栈商城/permission-edit-menu.png)
+
+### 客户端示例 
+部分示例，还有一部分暂时没空截图展示🤫
+
+![](/image/node/vue3全栈商城/Snipaste_2021-10-21_11-32-13.png)
+
+![](/image/node/vue3全栈商城/Snipaste_2021-10-21_11-33-17.png)
+
+![](/image/node/vue3全栈商城/Snipaste_2021-10-21_11-33-50.png)
+
+![](/image/node/vue3全栈商城/Snipaste_2021-10-21_11-34-21.png)
+
+![](/image/node/vue3全栈商城/Snipaste_2021-10-21_11-34-42.png)
