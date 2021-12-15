@@ -948,6 +948,12 @@ links:
       link: "https://blog.lailutie.com/",
       avatar: "https://llt-medium.oss-cn-hangzhou.aliyuncs.com/medium/img/blog-llt-index/headImg00.jpg"
     }
+    - {
+      title: "Loneliness",
+      intro: "万水千山，你愿意陪我一起看吗",
+      link: "https://www.dingshiyi.top/",
+      avatar: "https://blog-1303885568.cos.ap-chengdu.myqcloud.com/useImg/avat.jpg"
+    }
 
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
