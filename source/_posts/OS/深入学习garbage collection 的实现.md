@@ -112,14 +112,13 @@ categories:
 ## mark-compact
 
 `mark-compact `(标记整理/压缩) 算法主要的是为了降低内存碎片化的问题，之前提到的 `mark-sweep`标记清除 `非移动式回收器` 就会产生很多内存碎片。即：尽管堆中任然有很多可用的内存空间，但是内存管理器无法找到一块连续的内存空间来分配较大的对象，或者需要花费较长的时间才能够找到合适的空闲内存。
+![](/image/OS/深入学习garbage_collection的实现/image_14.png)
 
 所以，对于长时间运行的程序，采用非移动式回收器来进行内存管理 就会慢慢不断的产生内存碎片。
 
 所以我们可以采用一种对堆中的对象对象进行整理(compact)的一种算法来降低内存碎片的使用，即将 存活的对象移动到堆的一端，将不存活的对象移动到堆的另一端。
 
 ![](/image/OS/深入学习garbage_collection的实现/image_13.png)
-
-![](/image/OS/深入学习garbage_collection的实现/image_14.png)
 
 ![](/image/OS/深入学习garbage_collection的实现/image_15.png)
 
@@ -154,8 +153,9 @@ categories:
 ![](/image/OS/深入学习garbage_collection的实现/image_20.png)
 
 ![](/image/OS/深入学习garbage_collection的实现/image_21.png)
+![](/image/OS/深入学习garbage_collection的实现/image.png)
 
-### updaRefrences
+### updateRefrences
 
 第二次扫描堆会更新 赋值器 中对象的引用地址为 `forwardingAddress`(转发地址)
 
