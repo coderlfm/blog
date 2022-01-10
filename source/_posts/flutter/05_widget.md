@@ -16,6 +16,7 @@ flutter 基本组件，`StatelessWidget` 和 `StatefulWidget`的基本使用
  
 <!-- more -->
 
+## 声明式编程与命令式编程
 
 `android/ios` 命令式编程
 
