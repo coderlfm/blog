@@ -10,7 +10,8 @@ categories:
 - Flutter
 - Dart
 
-cover: /cover-imgs/dart2.png
+cover: /cover-imgs/flutter.png
+
 ---
 flutter 基本组件，`StatelessWidget` 和 `StatefulWidget`的基本使用
  

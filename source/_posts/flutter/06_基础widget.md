@@ -10,7 +10,8 @@ categories:
 - Flutter
 - Dart
 
-cover: /cover-imgs/dart2.png
+cover: /cover-imgs/flutter.png
+
 ---
 常用的 widget，`Container`，`Text`，`image`，圆角等
  

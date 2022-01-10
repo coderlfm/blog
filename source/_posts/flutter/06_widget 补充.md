@@ -10,7 +10,8 @@ categories:
   - Flutter
   - Dart
 
-cover: /cover-imgs/dart2.png
+cover: /cover-imgs/flutter.png
+
 ---
 
 其它场景的widget补充
