@@ -18,7 +18,7 @@ code
 ```
 
 ## 自定义 css
-在 `cource/css` 下新建 `custom.css`，并新增以下内容
+在 `scource/css` 下新建 `custom.css`，并新增以下内容
 
 ``` css
 @font-face {
