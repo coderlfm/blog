@@ -54,6 +54,10 @@ code
   color: #fff;
 }
 
+.code-wrapper ::selection {
+  color: #fff;
+  background: #da8db1;
+}
 ``` -->
 
 <!-- ## 适配暗黑模式
