@@ -13,7 +13,7 @@ categories:
 cover: /cover-imgs/flutter.png
 ---
 
-Getx 路由
+Getx 路由，免context
 
 <!-- more -->
 # GetX 路由
@@ -77,6 +77,26 @@ Get.to(
 
 
 
+### 关闭当前页面并进入下一个页面(replace)
+
+```Dart
+Get.offNamed("/NextScreen");
+
+```
+
+
+
+
+### 关闭所有页面并进入下一个页面
+
+```Dart
+Get.offAllNamed("/NextScreen");
+
+```
+
+
+
+
 ### 命名路由跳转
 
 ```Dart
@@ -86,11 +106,115 @@ Get.toNamed('/home');
 
 
 
-## 返回
+
+
+## 路由传参
+
+### url参数
+
+```Dart
+Get.offAllNamed("/detail?id=1001&title=苹果");
+
+```
+
+
+页面 /controller 接收
+
+```Dart
+print(Get.parameters['id']);  // out: 1001
+print(Get.parameters['title']);  // out: 苹果
+
+```
+
+
+
+
+### arguments 参数
+
+```Dart
+Get.toNamed("/NextScreen", arguments: '苹果');
+
+```
+
+
+页面 /controller 接收
+
+```Dart
+print(Get.arguments); // out: 苹果
+
+```
+
+
+
+
+## 返回上一页
+
+返回传参
 
 ```Dart
 Get.back(result:'yyyy');
 
+```
+
+
+返回接受参数
+
+```Dart
+Get.toNamed("/detail/1001?title=苹果").then((res){
+  print(res); //  out: yyyy
+});
+```
+
+
+
+
+## 动态路由
+
+### 动态路由注册
+
+```Dart
+ getPages: [
+    GetPage(name: '/', page: () => MyHomePage()),
+    GetPage(name: '/detail/:id', page: () => DetailPage()),
+  ],
+```
+
+
+
+
+### 动态路由跳转
+
+```Dart
+Get.toNamed("/detail/1001?title=苹果");
+
+```
+
+
+
+
+### 动态路由接受参数
+
+```Dart
+print(Get.parameters['id']);  // out: 1001
+print(Get.parameters['title']);  // out: 苹果
+
+```
+
+
+
+
+## 中间件
+
+### 全局中间件(全局导航守卫)
+
+```Dart
+GetMaterialApp(
+  routingCallback: (routing) {
+    if(routing.current == '/second'){
+      openAds();
+    }
+  }
+)
 ```
 
 
