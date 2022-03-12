@@ -32,6 +32,25 @@ cover: /cover-imgs/flutter.png
 
 
 
+## 背景图
+
+```Dart
+Container(
+  decoration: BoxDecoration(
+    image: DecorationImage(
+      image: AssetImage("images/bg.jpg"),
+      fit: BoxFit.cover,
+    ),
+  ),
+  child: Center(
+    child: Text('Hello Wolrd', style: TextStyle(fontSize: 22.0, color: Colors.white),),
+  ),
+),
+```
+
+
+
+
 ## 懒渲染
 
 类似于前端中路由懒加载
@@ -158,5 +177,90 @@ Scaffold(
   resizeToAvoidBottomInset: false,
 );
 ```
+
+
+
+
+## 下拉刷新顶部固定其它组件
+
+```Dart
+return Scaffold(
+  appBar: AppBar(title: const Text('VipManagePage')),
+  body: Column(children: [
+    const Text('输入框'),
+    Expanded(
+        child: ProListView( // 下拉刷新组件
+      page: controller.page,
+      total: controller.total,
+      refreshController: controller.refreshController,
+      promise: (int _page) => controller.http(page: _page),
+      child: ListView.builder(
+        itemCount: 40,
+        itemBuilder: (context, index) => const Text('1111'),
+      ),
+      data: controller.items,
+    ))
+  ]),
+);
+
+```
+
+
+
+
+## 按钮 水波纹边距 
+
+```Dart
+Row(children: [
+  Expanded(
+      child: TextButton(
+    onPressed: () {},
+    child: const Text('暂停发放'),
+    style: ButtonStyle(
+      minimumSize: MaterialStateProperty.all(Size.fromHeight(100.rpx)),
+      shape: MaterialStateProperty.all(RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(20.rpx),
+        bottomLeft: Radius.circular(20.rpx),
+      ))),
+    ),
+  )),
+  Container(height: double.infinity, width: 2.rpx, color: const Color(0xffeaeaea), margin: EdgeInsets.symmetric(vertical: 20.rpx)),
+  Expanded(
+      child: TextButton(
+    style: ButtonStyle(
+      minimumSize: MaterialStateProperty.all(Size.fromHeight(100.rpx)),
+      shape: MaterialStateProperty.all(RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+        topRight: Radius.circular(20.rpx),
+        bottomRight: Radius.circular(20.rpx),
+      ))),
+    ),
+    onPressed: () {},
+    child: const Text('停止使用', style: TextStyle(color: Colors.red)),
+  )),
+])
+```
+
+
+![](image/image.png "")
+
+ 
+
+
+
+## 去除按钮水波纹
+
+[https://blog.csdn.net/studying_ios/article/details/107342953](https://blog.csdn.net/studying_ios/article/details/107342953)
+
+```Dart
+ TextButton(
+    onPressed: onPressed,
+    style: const ButtonStyle(splashFactory: NoSplash.splashFactory),
+    child: Text(title, style: TextStyle(fontSize: 30.rpx, fontWeight: FontWeight.bold, color: isActive ? Colors.blue : Colors.black)),
+  )),
+```
+
+
 
 
