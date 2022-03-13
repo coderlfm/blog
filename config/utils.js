@@ -30,7 +30,7 @@ async function execPromise(cmd, args, options) {
 // 快捷执行
 async function exec(cmmmand) {
   const [cmd, ...args] = cmmmand.split(' ');
-  return execPromise(cmd, args, { cwd: process.cwd(), stdio: 'inherit' });
+  return await execPromise(cmd, args, { cwd: process.cwd(), stdio: 'inherit' });
 }
 
 module.exports = { execPromise, exec };
