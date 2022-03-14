@@ -3,15 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "g": "hexo g",
     "start": "hexo g && hexo s",
     "draft": "hexo g && hexo s --draft",
-    "build": "hexo generate",
-    "clean": "hexo clean",
-    "server": "hexo server",
     "init": "node config/init",
-    "publish": "node config/publish",
-    "publish2": "hexo clean && hexo g && qshell qupload2 --src-dir=D:/profile/blog/public --bucket=lfm-blog --overwrite && qshell cdnrefresh -i ./torefresh.txt"
+    "publish": "node config/publish"
   },
   "hexo": {
     "version": "6.0.0"
