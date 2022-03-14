@@ -11,7 +11,8 @@ const getAccountCommand = () =>
 const fromPath = './template';
 const toPath = '../node_modules/hexo-theme-fluid';
 
-const publishCommand = `hexo clean && hexo g && qshell qupload2 --src-dir=${staticPath} --bucket=lfm-blog --overwrite && qshell cdnrefresh -i ${torefreshPath}`;
+const publishCommandOrigin = `hexo clean && hexo g && qshell qupload2 --src-dir=${staticPath} --bucket=lfm-blog --overwrite && qshell cdnrefresh -i ${torefreshPath}`;
+const publishCommand = publishCommandOrigin.split(' && '); // 需要分割成多个不同命令
 
 module.exports = {
   getAccountCommand,

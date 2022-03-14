@@ -28,9 +28,9 @@ async function execPromise(cmd, args, options) {
 }
 
 // 快捷执行
-async function exec(cmmmand) {
+async function exec(cmmmand, options = { cwd: process.cwd(), stdio: 'inherit' }) {
   const [cmd, ...args] = cmmmand.split(' ');
-  return await execPromise(cmd, args, { cwd: process.cwd(), stdio: 'inherit' });
+  return await execPromise(cmd, args, options);
 }
 
 module.exports = { execPromise, exec };
