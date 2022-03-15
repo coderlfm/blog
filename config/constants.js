@@ -2,6 +2,7 @@ const path = require('path');
 
 const staticPath = path.resolve(__dirname, '../public');
 const torefreshPath = path.resolve(__dirname, './torefresh.txt');
+const uploadPath = path.resolve(__dirname, './upload.conf');
 
 // 设置七牛云用户名
 const getAccountCommand = () =>
@@ -11,7 +12,7 @@ const getAccountCommand = () =>
 const fromPath = './template';
 const toPath = '../node_modules/hexo-theme-fluid';
 
-const publishCommandOrigin = `hexo clean && hexo g && qshell qupload2 --src-dir=${staticPath} --bucket=lfm-blog --overwrite && qshell cdnrefresh -i ${torefreshPath}`;
+const publishCommandOrigin = `hexo clean && hexo g && qshell qupload ${uploadPath} && qshell cdnrefresh -i ${torefreshPath}`;
 const publishCommand = publishCommandOrigin.split(' && '); // 需要分割成多个不同命令
 
 module.exports = {
