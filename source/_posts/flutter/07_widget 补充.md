@@ -264,3 +264,15 @@ Row(children: [
 
 
 
+## pull_to_refresh 上拉加载更多组件 初始化刷新的问题
+
+场景 顶部搜索栏固定，剩余区域为下拉刷新和上拉加载更多的列表，页面进入默认会刷新的问题，将`initialRefresh`设置为 `false`
+
+```Dart
+  RefreshController refreshController = RefreshController(initialRefresh: false);
+
+```
+
+
+
+
