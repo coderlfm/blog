@@ -276,3 +276,34 @@ Row(children: [
 
 
 
+## 子组件变换的动画效果
+
+使用`AnimatedSwitcher`来包裹需要发生变化的子组件，如果子组件只是文字发生变化是不会触发动画，因此可以给`Text`加一个`UniqueKey`
+
+```Dart
+AnimatedSwitcher()
+```
+
+
+
+
+## 获取随机颜色
+
+```Dart
+Colors.primaries[ Random().nextInt(Colors.primaries.length) ];
+```
+
+
+
+
+## 获取子`widget`尺寸，位置等信息
+
+`RenderObject`有很多种类型 `RenderBox`只是其中一种
+
+```Dart
+final renderBox = _globalKey.currentContext.findRenderObject() as RenderBox
+print(renderBox.size);  // 获取尺寸
+print(renderBox.localToGlobal(Offset.zero)); // 获取距离屏幕左上角爱的位置 
+```
+
+
