@@ -17,6 +17,7 @@ cover: /cover-imgs/flutter.png
 其它场景的widget补充
 
 <!-- more -->
+# Widget 补充
 
 ## 背景颜色渐变
 
@@ -281,7 +282,7 @@ Row(children: [
 使用`AnimatedSwitcher`来包裹需要发生变化的子组件，如果子组件只是文字发生变化是不会触发动画，因此可以给`Text`加一个`UniqueKey`
 
 ```Dart
-AnimatedSwitcher()
+AnimatedSwitcher(child: )
 ```
 
 
@@ -304,6 +305,178 @@ Colors.primaries[ Random().nextInt(Colors.primaries.length) ];
 final renderBox = _globalKey.currentContext.findRenderObject() as RenderBox
 print(renderBox.size);  // 获取尺寸
 print(renderBox.localToGlobal(Offset.zero)); // 获取距离屏幕左上角爱的位置 
+```
+
+
+
+
+## 隐藏子元素
+
+```Dart
+Visibility(
+  visible: false,
+  child: container,
+)
+```
+
+
+
+
+## 计算颜色亮度
+
+```Dart
+_color.computeLuminance()
+```
+
+
+
+
+## Scrollbar 滚动条
+
+- `Scrollbar` 根据不同系统出现滚动条
+- `CupertinoScrollbar` ios 滚动条
+
+如果传入了 `isAlwaysShown`则需要将`ListView` controller 设为同一个，让他们保持一致
+
+```Dart
+Scrollbar(
+  isAlwaysShown: true, // 是否需要一直显示
+  controller: _controller,
+  child ListView(
+    controller: _controller,
+  )
+)
+```
+
+
+
+
+
+
+## 下拉刷新 RefreshIndicator
+
+`[RefreshIndicator](https://api.flutter-io.cn/flutter/material/RefreshIndicator-class.html)`下拉刷新
+
+```Dart
+RefreshIndicator(
+  onRefresh: ()=> Future.delayed(Duration(seconds: 2))
+) 
+```
+
+
+
+
+## 左右滑动删除 Dismissible
+
+可使用 [https://api.github.com/events](https://api.github.com/events) 进行简单演练
+
+```Dart
+ const Dismissible({
+  required Key key,
+  required this.child,
+  this.background,  // 左滑背景色
+  this.secondaryBackground,  // 右滑背景色
+  this.confirmDismiss,  // 滑动后回调, 例如询问用户是否确认删除
+  this.onResize,  // 在删除时候的回调
+  this.onUpdate,
+  this.onDismissed, // 删除成功后的回调
+  this.direction = DismissDirection.horizontal,  // 水平滑动 或者 垂直滑动
+  this.resizeDuration = const Duration(milliseconds: 300),  // 删除时的时间
+  this.dismissThresholds = const <DismissDirection, double>{}, // 设置滑动的距离，默认是 40% 0.4
+  this.movementDuration = const Duration(milliseconds: 200), // 滑动到 40% 后的 自动过渡动画时间
+  this.crossAxisEndOffset = 0.0,
+  this.dragStartBehavior = DragStartBehavior.start,
+  this.behavior = HitTestBehavior.opaque,
+})
+```
+
+
+```Dart
+import 'package:flutter/material.dart';
+
+import 'data.dart';
+import 'model.dart';
+
+class DismissibleTestPage extends StatefulWidget {
+  const DismissibleTestPage({Key? key}) : super(key: key);
+
+  @override
+  State<DismissibleTestPage> createState() => _DismissibleTestPageState();
+}
+
+class _DismissibleTestPageState extends State<DismissibleTestPage> {
+  List<GithubEvent> list = []; // github 事件列表
+
+  @override
+  void initState() {
+    getData();
+  }
+
+  getData() async {
+    setState(() {
+      list = gethubEventData.map((e) => GithubEvent.fromMap(e)).toList();
+      print('res: ${list}');
+    });
+  }
+
+  // 删除确认
+  Future<bool?> handleRemove(int index) {
+    return showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Container(child: Text('是否确认删除？')),
+        content: Text('111'),
+        actions: [
+          ElevatedButton(onPressed: () => Navigator.of(context).pop(false), child: Text('取消')),
+          ElevatedButton(
+            onPressed: () {
+              setState(() => list.removeAt(index));
+              Navigator.of(context).pop(true);
+            },
+            child: Text('确认'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      // 下拉刷新
+      body: RefreshIndicator(
+        onRefresh: () => getData(),
+
+        // 滚动条
+        child: Scrollbar(
+          child: ListView.builder(
+              itemCount: list.length,
+              itemBuilder: (ctx, index) {
+                final event = list[index];
+
+                return Dismissible(
+                  key: ValueKey(event.id),
+                  // 删除确认
+                  confirmDismiss: (dismissDirection) async {
+                    return handleRemove(index);
+                    // return false;
+                  },
+                  child: ListTile(
+                    leading: ClipRRect(
+                      borderRadius: BorderRadius.circular(30),
+                      child: Image.network(event.actor.avatarUrl, width: 60, height: 60, fit: BoxFit.cover),
+                    ),
+                    title: Text('${event.actor.login}'),
+                    subtitle: Text('${event.repo.name}'),
+                  ),
+                );
+              }),
+        ),
+      ),
+    );
+  }
+}
+
 ```
 
 
