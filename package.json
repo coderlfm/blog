@@ -6,6 +6,7 @@
     "start": "hexo g && hexo s",
     "draft": "hexo g && hexo s --draft",
     "init": "node config/init",
+    "init:dev": "node config/init type=dev",
     "publish": "node config/publish"
   },
   "hexo": {
