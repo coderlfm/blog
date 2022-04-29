@@ -495,7 +495,7 @@ index:
 #---------------------------
 post:
   # banner_img: /img/default.png
-  banner_img: https://qiniu-oss.liufengmao.cn/blog/banner-2/img-5b18fbbc86fb3528c40cf32aee8bc3b7.jpg
+  banner_img: https://blog.liufengmao.cn/theme_images/img-5b18fbbc86fb3528c40cf32aee8bc3b7.jpg
   banner_img_height: 70
   banner_mask_alpha: 0.3
 
