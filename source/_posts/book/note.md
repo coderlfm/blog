@@ -13,6 +13,7 @@ cover: /cover-imgs/book.jpg
 ## 在读
 
 [《Vue.js设计与实现》](https://book.douban.com/subject/35768338/)
+[《深入理解计算机系统》（原书第3版）](https://book.douban.com/subject/26912767/)
 [《中国最美的100个地方》](https://book.douban.com/subject/10808725/)
 [《费曼学习法（用输出倒逼输入）》](https://book.douban.com/subject/35368398/)
 [《C++ Primer Plus》第6版中文版（2020年）](https://book.douban.com/subject/35126643/)
