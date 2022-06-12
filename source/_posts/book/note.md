@@ -18,6 +18,9 @@ cover: /cover-imgs/book.jpg
 [《费曼学习法（用输出倒逼输入）》](https://book.douban.com/subject/35368398/)
 [《C++ Primer Plus》第6版中文版（2020年）](https://book.douban.com/subject/35126643/)
 
+## 6 月
+[《码农翻身》](https://book.douban.com/subject/30231515/)
+
 ## 11 月
 [《JavaScript 悟道》](https://book.douban.com/subject/35469273/)
 
