@@ -19,6 +19,7 @@ cover: /cover-imgs/book.jpg
 [《C++ Primer Plus》第6版中文版（2020年）](https://book.douban.com/subject/35126643/)
 
 ## 6 月
+[《CPU通识课》](https://book.douban.com/subject/35857731/)
 [《码农翻身》](https://book.douban.com/subject/30231515/)
 
 ## 11 月
