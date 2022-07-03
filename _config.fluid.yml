@@ -900,22 +900,10 @@ links:
   # Member item of page
   items:
     - {
-      title: "曦小站",
-      intro: "简单的事用心做，用心的事重复做",
-      link: "https://ascd.top/",
-      avatar: "https://blog-koa.oss-cn-shanghai.aliyuncs.com/948d73d9f0cb6fde3a0b25b805c1dbff.png"
-    }
-    - {
       title: "XXLoki博客",
       intro: "书痴者文必工，艺痴者技必良。",
       link: "http://www.weissdeng.com/",
       avatar: "https://i.loli.net/2021/07/06/3X5yGSY9kWqpsnH.jpg"
-    }
-    - {
-      title: "RobinWang",
-      intro: "生活要有仪式感，认真生活!",
-      link: "https://blog.wangmeng.pro/",
-      avatar: "https://cdn.jsdelivr.net/gh/RobinWM/cdn@2.0/img/custom/avatar.jpg"
     }
     - {
       title: "毛毛的 BLOG",
