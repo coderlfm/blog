@@ -900,22 +900,16 @@ links:
   # Member item of page
   items:
     - {
-      title: "XXLoki博客",
-      intro: "书痴者文必工，艺痴者技必良。",
-      link: "http://www.weissdeng.com/",
-      avatar: "https://i.loli.net/2021/07/06/3X5yGSY9kWqpsnH.jpg"
-    }
-    - {
       title: "毛毛的 BLOG",
       intro: "每一个不曾起舞的日子都是对生命的辜负",
       link: "https://tianjixian01.gitee.io/",
       avatar: "https://tianjixian01.gitee.io/img/logo.png"
     }
     - {
-      title: "Vue Blog",
+      title: "Natural Blog",
       intro: "",
       link: "https://www.hsslive.cn/",
-      avatar: "https://www.hsslive.cn/_nuxt/img/3.046364a.jpg"
+      avatar: "https://resource.hsslive.cn/nuxt-blog-client/v0.0.30/img/default_avatar.008268c.webp"
     }
     - {
       title: "Zeruns's Blog",
